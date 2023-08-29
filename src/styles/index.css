@@ -51,7 +51,6 @@ img {
 h1 {
   text-align: left;
   padding: 20px 0;
-  margin-bottom: 10px;
 }
 header{
   display: flex;
@@ -59,11 +58,12 @@ header{
   align-items: center;
   text-align: center;
   background: #3586ff;
+  margin-bottom: 50px;
+
 }
 
 header p{
   text-align: left;
-  padding-bottom: 20px;
 }
 
 
