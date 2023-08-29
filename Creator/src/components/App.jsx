@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import CoverLetter from "./components/CoverLetter";
-import Home from "./components/Home"
+import CoverLetter from "./CoverLetter";
+import Home from "./Home"
 function App() {
   return (
     <Router>
