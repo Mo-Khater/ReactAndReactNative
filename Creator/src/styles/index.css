@@ -12,8 +12,8 @@ section {
   padding: 100px;
   margin: 35px 0;
   height: fit-content;
-  background-color: #3586ff;
-  border: 1px solid #307cee;
+  background-color:#102c57;;
+  border: 1px solid #102c57;;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,7 @@ header{
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  background: #3586ff;
+  background-color: #102c57;;
   margin-bottom: 40px;
 }
 
@@ -109,7 +109,7 @@ h2 {
 }
 footer {
   position: relative;
-  background: #3586ff;
+  background-color: #102c57;;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
