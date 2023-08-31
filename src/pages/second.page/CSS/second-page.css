@@ -1,0 +1,90 @@
+#secondPage .Background {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#secondPage .Background .BackgroundImg {
+  height: 89.2vh;
+  width: 40vw;
+  background: url("../../../pictures/information-3.jpg");
+  background-size: 40vw;
+}
+#secondPage .mainWrapper {
+  margin-left: 50px;
+  margin-top: 20px;
+  display: flex;
+  width: 50vw;
+  height: 80vh;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-left: 50px;
+  padding-right: 20px;
+  border-style: solid;
+  border-color: #e8f4f8;
+  background-color: white;
+}
+#secondPage .mainWrapper p {
+  font-size: 40px;
+  font-weight: bold;
+}
+#secondPage .mainWrapper .inputWrapper {
+  min-width: 30vw;
+  min-height: 10vh;
+  font-size: 20px;
+}
+#secondPage .mainWrapper .inputWrapper label {
+  display: block;
+}
+#secondPage .mainWrapper .inputWrapper input {
+  border: 1px solid #cacaca;
+  margin: 10px 0;
+  width: 98%;
+  padding: 6px 10px;
+  font-size: 15px;
+}
+#secondPage .mainWrapper .inputWrapper input:focus {
+  outline: none;
+  border-style: solid;
+  border-color: rgb(114, 114, 192);
+  border-width: 1px;
+}
+#secondPage .mainWrapper .borderbottom {
+  border-bottom: 1px solid #ccc;
+  width: 95%;
+}
+#secondPage .mainWrapper .linksWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 20vh;
+  width: 100%;
+}
+#secondPage .mainWrapper .linksWrapper .inputWrapper {
+  min-width: 20px;
+}
+#secondPage .mainWrapper .linksWrapper input {
+  width: 85%;
+}
+#secondPage .mainWrapper .buttonsWrapper {
+  display: flex;
+  width: 94%;
+  justify-content: space-between;
+}
+#secondPage .mainWrapper .buttonsWrapper button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 20px;
+  border-radius: 2px;
+  border-width: 2px;
+}
+#secondPage .mainWrapper .buttonsWrapper .Next {
+  background-color: #102c57;
+  color: white;
+}
+#secondPage .mainWrapper .buttonsWrapper .Back {
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: #8f8e8e;
+}/*# sourceMappingURL=second-page.css.map */
