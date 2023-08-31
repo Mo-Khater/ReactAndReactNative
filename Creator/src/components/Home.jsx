@@ -4,14 +4,14 @@ import Footer from "./Footer";
 const Home = () => {
     return (
         <div className="home">
-            <Header/>
+            <Header />
             <Section
                 id ={'resume'}
                 title={"Your Cover Letter"}
                 description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
             Easy prompts help you create the perfect
             job-worthy cover letter effortlessly!`}
-                img={'cover-letter-made-easy.avif'}
+                img={'../assets/cover-letter-made-easy.avif'}
                 text={'Create my letter'}
                 alt={'cover letter'}
                 link={'coverletter'}

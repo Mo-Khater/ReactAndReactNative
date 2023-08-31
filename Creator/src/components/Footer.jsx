@@ -26,32 +26,30 @@ function Footer() {
           </p>
           <ul>
             <li>CONTACT</li>
-            <li><a href="">FACEBOOK</a></li>
-            <li><a href="">LINKEDIN</a></li>
+            <li><a href="https://www.facebook.com/" target='_blank'>FACEBOOK</a></li>
+            <li><a href="https://www.linkedin.com/" target='_blank'>LINKEDIN</a></li>
           </ul>
         </section>
         <section className="services">
           <h4>SERVICES</h4>
           <ul>
-            <li><a href="">HOME</a></li>
             <li><a href="#resume">RESUME</a></li>
             <li><a href="#letter">LETTER</a></li>
             <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#about">ABOUT</a></li>
           </ul>
         </section>
         <section className="services">
           <h4>OUR TEAM</h4>
           <ul>
-            <li><a href="">MOHAMED KHATER</a></li>
-            <li><a href="">MAZEN ADEL</a></li>
-            <li><a href="">OMAR MOHAMMED</a></li>
-            <li><a href="">MOHAMMED ASHRAF</a></li>
-            <li><a href="">OMAR HASHEM</a></li>
+            <li>MOHAMED KHATER</li>
+            <li>MAZEN ADEL</li>
+            <li>OMAR MOHAMMED</li>
+            <li>MOHAMMED ASHRAF</li>
+            <li>OMAR HASHEM</li>
           </ul>
         </section>
       </div>
-      <p>Copyright © 2023 Creator</p>
+      <p>Copyright © {new Date().getFullYear()} Creator</p>
     </footer>
   );
 }

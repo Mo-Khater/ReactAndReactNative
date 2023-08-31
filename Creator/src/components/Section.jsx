@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-const Section = ({ id,title, description, link,text,alt,img }) => {
+const Section = ({id, title, description, link, text, alt,img }) => {
     return (
-      <section id={id} class="flex-container-section">
+      <section id={id} className="flex-container-section">
       <article >
           <h2>
               {title}, Made <span >Easy</span>
@@ -12,7 +12,7 @@ const Section = ({ id,title, description, link,text,alt,img }) => {
           <Link to={`/${link}`}>{text}</Link>
         </article>
         <figure>
-          <img src= {require('./cover-letter-made-easy.avif')} alt={alt} />
+          <img src= {require('../assets/cover-letter-made-easy.avif')} alt={alt} />
         </figure>
       </section>
     );

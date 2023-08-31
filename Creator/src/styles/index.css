@@ -2,18 +2,36 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 html{
-  background-color: white;
+  background-color: #232323;
 }
 .header{
   color: #002B6F;
   padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .header span{
   color: red;
 }
-h1 {
+header h1 {
   text-align: left;
   padding: 20px 0;
+}
+.nav{
+  margin: 50px;
+
+}
+.nav ul{
+  list-style-type: none;
+  display: flex;
+}
+.nav li{
+  margin-left: 50px;
+}
+.nav .a{
+  text-decoration: none;
+  color: white;
 }
 
 .flex-container-section h2 {
@@ -28,7 +46,7 @@ h1 {
   align-items: center;
 }
 .fancy-button {
-  background-color: #0099ff;
+  background-color: red;
   color: white;
   border: none;
   display: flex;
@@ -42,16 +60,16 @@ h1 {
 }
 
 .fancy-button:hover {
-  background-color: #0066cc;
+  background-color: rgb(189, 2, 2);
   cursor: pointer;
 }
 
 .fancy-button:active {
-  background-color: #003399;
+  background-color: rgb(74, 2, 2);
 }
 
 .flex-container-section{
-  background-color: #002B6F;
+  background-color: black;
   border-radius: 0 0 0 80px;
   padding: 50px;
   display: flex;
@@ -70,7 +88,7 @@ h1 {
   min-height: 50px;
   border-radius: 25px;
   padding: 11px 20px;
-  background-color: #02818c;
+  background-color: red;
   color: #fff;
   text-transform: none;
   text-decoration: none;
@@ -84,6 +102,14 @@ h1 {
   margin-top: 50px;
 }
 
+.flex-container-section a:hover {
+  background-color: rgb(189, 2, 2);
+  cursor: pointer;
+}
+
+.flex-container-section a:active {
+  background-color: rgb(74, 2, 2);
+}
 .flex-container-section p{
   line-height: 3rem;
   font-weight: 700;
@@ -139,12 +165,13 @@ footer .info{
 }
 footer h2{
   font-size: 24px;
+  color: red;
 }
 footer a{
   text-decoration: none;
   color: white;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1100px) {
   .flex-container-section{
     flex-direction: column-reverse;
   }
@@ -152,4 +179,51 @@ footer a{
     width: 200px;
     height: 200px;
   }
+}
+/*  */
+#target{
+  background-color: white;
+}
+#target #content {
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #102c57;
+}
+#target hr{
+  background: #102c57;
+  height:1px;
+}
+#target .head{
+  color: #102c57;
+}
+#target .line{
+  height: 3px;
+}
+#target .centered {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#target .job-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#target .contact-info {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#target #letter {
+  line-height: 1.5;
+}
+
+#target .indent {
+  text-indent: 1.5em;
 }
