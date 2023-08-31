@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
-const Section = ({ title, description, link }) => {
+const Section = ({ id,title, description, link,text,alt,img }) => {
     return (
-        <section>
-          <div className="left">
-                <h2>{title}</h2>
-                <p>{description}</p>
-          <Link to={`/${link}`} className="fancy-button">Get Started</Link>
-          </div>
-          <div className="right">
-            <figure>
-                    <img src={require('./bg.png')} alt="Description" />
-            </figure>
-          </div>
-        </section>
-      );
+      <section id={id} class="flex-container-section">
+      <article >
+          <h2>
+              {title}, Made <span >Easy</span>
+          </h2>
+          <p>
+            {description}
+          </p>
+          <Link to={`/${link}`}>{text}</Link>
+        </article>
+        <figure>
+          <img src= {require('./cover-letter-made-easy.avif')} alt={alt} />
+        </figure>
+      </section>
+    );
 }
 export default Section;

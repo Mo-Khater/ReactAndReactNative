@@ -6,25 +6,49 @@ const Home = () => {
         <div className="home">
             <Header/>
             <Section
-                title={"The Cover Letter that gets the job"}
-                description={"Build a cover letter in minutes"}
+                id ={'resume'}
+                title={"Your Cover Letter"}
+                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
+            Easy prompts help you create the perfect
+            job-worthy cover letter effortlessly!`}
+                img={'cover-letter-made-easy.avif'}
+                text={'Create my letter'}
+                alt={'cover letter'}
                 link={'coverletter'}
                 />
             <Section
-                title={"The Cover Letter that gets the job"}
-                description={"Build a cover letter in minutes"}
+                id ={'letter'}
+                title={"Your Cover Letter"}
+                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
+            Easy prompts help you create the perfect
+            job-worthy cover letter effortlessly!`}
+                img={'cover-letter-made-easy.avif'}
+                text={'Create my letter'}
+                alt={'cover letter'}
                 link={'coverletter'}
                 />
             <Section
-                title={"The Cover Letter that gets the job"}
-                description={"Build a cover letter in minutes"}
+                id ={'portfolio'}
+                title={"Your Cover Letter"}
+                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
+            Easy prompts help you create the perfect
+            job-worthy cover letter effortlessly!`}
+                img={'cover-letter-made-easy.avif'}
+                text={'Create my letter'}
+                alt={'cover letter'}
                 link={'coverletter'}
                 />
             <Section
-                title={"The Cover Letter that gets the job"}
-                description={"Build a cover letter in minutes"}
+                id ={'about'}
+                title={"Your Cover Letter"}
+                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
+            Easy prompts help you create the perfect
+            job-worthy cover letter effortlessly!`}
+                img={'cover-letter-made-easy.avif'}
+                text={'Create my letter'}
+                alt={'cover letter'}
                 link={'coverletter'}
-            />
+                />       
             <Footer/>
         </div>
     )
