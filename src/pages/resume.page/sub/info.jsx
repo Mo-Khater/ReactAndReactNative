@@ -38,14 +38,6 @@ function Education({ educationInfo }) {
             <span>{educationInfo.institution}</span>
             <br />
             <span>{educationInfo.graduate}</span>
-            {/* <ul>
-                <li>
-                    <h6>Your degree</h6><span>College</span>
-                </li>
-                <li>
-                    <h6>Your degree</h6><span>College</span>
-                </li>
-            </ul> */}
         </div>
     );
 
@@ -60,8 +52,6 @@ function Skills({ skillsInfo }) {
                 {skillsInfo.map((val) => {
                     return <li>{val}</li>;
                 })}
-                {/* <li>CS50</li>
-                <li>JS</li> */}
             </ul>
         </div>
 

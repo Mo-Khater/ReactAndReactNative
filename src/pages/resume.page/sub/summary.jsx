@@ -15,10 +15,6 @@ function Summary({ summaryInfo }) {
                             <li><h5>{ele}</h5></li>
                         );
                     })}
-                    {/* <li><h5>oosofo</h5></li>
-                    <li><h5>oosofo</h5></li>
-                    <li><h5>oosofo</h5></li>
-                    <li><h5>oosofo</h5></li> */}
                 </ul>
             </div>
         </>
@@ -33,8 +29,6 @@ function Language({ langsInfo }) {
                 {langsInfo.map((val) => {
                     return <li>{val}</li>;
                 })}
-                {/* <li><h6>CS50</h6></li>
-                <li><h6>CS50</h6></li> */}
             </ul>
         </div>
     );
