@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import  FirstPage  from './pages/first.page/first-page';
 import SecondPage from './pages/second.page/second-page';
 import ThirdPage from './pages/third.page/third-page';
+import ResumePage from './pages/resume.page/resume';
 
 
 import React from 'react';
@@ -15,6 +16,7 @@ function App() {
               <Route path="/" element={<FirstPage/>}></Route>
               <Route path="/Education" element={<SecondPage/>}></Route>
               <Route path="/Skills" element={<ThirdPage/>}></Route>
+              <Route path='/Resume' element={<ResumePage/>}></Route>
             </Routes>
         </div>
       </div>

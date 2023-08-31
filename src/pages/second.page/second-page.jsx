@@ -9,9 +9,11 @@ const SecondPage = () => {
   const [Degree, setDegree] = useState("");
   const [Institution, setInit] = useState("");
   const [Graduation, setDate] = useState("");
-  const [Projects, setProjects] = useState(["", "", "", ""]);
+
+  const [Projects, setProjects] = useState([]);
   const [projectArr, setArr] = useState([]);
   const [proj, setipro] = useState(0);
+
   const navigate = useNavigate();
   const location = useLocation();
   const NextHandler = () => {
@@ -20,7 +22,7 @@ const SecondPage = () => {
         ...location.state,
         degree: Degree,
         institution: Institution,
-        graddate: Graduation,
+        graduate: Graduation,
         projectsArr: Projects,
       },
     });
@@ -29,7 +31,6 @@ const SecondPage = () => {
     navigate("/");
   };
   const AddProject = () => {
-    if (projectArr.length < 4) {
       setipro(proj + 1);
       setArr((prevprojects, index) => {
         return [
@@ -38,25 +39,21 @@ const SecondPage = () => {
           <div className="Projects">
             <input
               type="text"
+              id={proj}
               placeholder="e.g. Ecommerce website"
               onChange={(e) => {
                 setProjects((prev) => {
                   const value = e.target.value;
-                  let key = proj;
-                  const newArr = prev.map((pro, i) => {
-                    if (key === i) {
-                      return value;
-                    }
-                    return pro;
-                  });
-                  return newArr;
+                let key = parseInt(e.target.id);
+                if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
+                prev.filter(ele => ele === '');
+                return prev;
                 });
               }}
             ></input>
           </div>,
         ];
       });
-    }
   };
   const collection = createSlice({
     name: "projects",
@@ -101,6 +98,9 @@ const SecondPage = () => {
               id="email"
               placeholder="e.g. 2023"
               required
+              onChange={(e) => {
+                setDate(e.target.value);
+              }}
             ></input>
           </div>
 

@@ -5,18 +5,21 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const SecondPage = () => {
-  const [Hobbies, setHob] = useState(["", "", "", ""]);
+  const [Hobbies, setHob] = useState([]);
   const [HobArr, setHobArr] = useState([]);
   const [Hob, setiHob] = useState(0);
-  const [Programming, setProg] = useState(["", "", "", ""]);
+
+  const [Programming, setProg] = useState([]);
   const [ProgArr, setProgArr] = useState([]);
   const [prog, setiprog] = useState(0);
-  const [languages, setLang] = useState(["", "", "", ""]);
+
+  const [languages, setLang] = useState([]);
   const [LangArr, setLangArr] = useState([]);
   const [lan, setiLan] = useState(0);
+
   const navigate = useNavigate();
   const NextHandler = () => {
-    navigate("/TODO ADD link to the next page", {
+    navigate("/Resume", {
       state: {
         ...location.state,
         hobbies: Hobbies,
@@ -27,73 +30,61 @@ const SecondPage = () => {
   };
   const location = useLocation();
   const BackHandler = () => navigate("/Education");
-  const debug =()=>{
+  const debug = () => {
     console.log(location.state);
   }
   const AddLang = () => {
-    if (LangArr.length < 4) {
-      setiLan(lan + 1);
-      setLangArr((prevprojects, index) => {
-        return [
-          ...prevprojects,
-
-          <div className="Projects">
-            <input
-              type="text"
-              placeholder="e.g. Arabic"
-              onChange={(e) => {
-                setLang((prev) => {
-                  const value = e.target.value;
-                  let key = lan;
-                  const newArr = prev.map((pro, i) => {
-                    if (key === i) {
-                      return value;
-                    }
-                    return pro;
-                  });
-                  return newArr;
-                });
-              }}
-            ></input>
-          </div>,
-        ];
-      });
-    }
+    setiLan(lan + 1);
+    setLangArr((prevprojects, index) => {
+      return [
+        ...prevprojects,
+        <div className="Projects">
+          <input
+            type="text"
+            id={lan}
+            placeholder="e.g. Arabic"
+            onChange={(e) => {
+              setLang((prev) => {
+                const value = e.target.value;
+                let key = parseInt(e.target.id);
+                if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
+                prev.filter(ele => ele === '');
+                return prev;
+              });
+            }}
+          ></input>
+        </div>,
+      ];
+    });
   };
 
   const AddProg = () => {
-    if (ProgArr.length < 4) {
-      setiprog(prog + 1);
-      setProgArr((prevprojects, index) => {
-        return [
-          ...prevprojects,
+    setiprog(prog + 1);
+    setProgArr((prevprojects, index) => {
+      return [
+        ...prevprojects,
 
-          <div className="Projects">
-            <input
-              type="text"
-              placeholder="e.g. Web development"
-              onChange={(e) => {
-                setProg((prev) => {
-                  const value = e.target.value;
-                  let key = prog;
-                  const newArr = prev.map((pro, i) => {
-                    if (key === i) {
-                      return value;
-                    }
-                    return pro;
-                  });
-                  return newArr;
-                });
-              }}
-            ></input>
-          </div>,
-        ];
-      });
-    }
+        <div className="Projects">
+          <input
+            type="text"
+            id={prog}
+            placeholder="e.g. Web development"
+            onChange={(e) => {
+              setProg((prev) => {
+                const value = e.target.value;
+                let key = parseInt(e.target.id);
+                if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
+                prev.filter(ele => ele === '');
+                return prev;
+              });
+            }}
+          ></input>
+        </div>,
+      ];
+    });
   };
 
   const AddHobbie = () => {
-    if (HobArr.length < 4) {
       setiHob(Hob + 1);
       setHobArr((prevprojects, index) => {
         return [
@@ -102,25 +93,21 @@ const SecondPage = () => {
           <div className="Projects">
             <input
               type="text"
+              id={Hob}
               placeholder="e.g. Fishing"
               onChange={(e) => {
                 setHob((prev) => {
                   const value = e.target.value;
-                  let key = Hob;
-                  const newArr = prev.map((pro, i) => {
-                    if (key === i) {
-                      return value;
-                    }
-                    return pro;
-                  });
-                  return newArr;
+                  let key = parseInt(e.target.id);
+                  if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
+                  prev.filter(ele => ele === '');
+                  return prev;
                 });
               }}
             ></input>
           </div>,
         ];
       });
-    }
   };
 
   function kapran() {

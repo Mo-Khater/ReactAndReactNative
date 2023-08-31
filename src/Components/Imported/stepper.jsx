@@ -8,6 +8,7 @@ const steps = [
   'Contact Information',
   'Education',
   'Skills',
+  'Resume'
 ];
 
 export default function HorizontalLinearAlternativeLabelStepper({props}) {
