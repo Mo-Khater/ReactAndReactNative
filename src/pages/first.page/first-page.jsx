@@ -50,7 +50,7 @@ const FirstPage = () => {
             <input
               type="tel"
               id="phone"
-              placeholder="e.g. 01152794877"
+              placeholder="e.g. 01111111111"
               required
               onChange={(e) => setPhone(e.target.value)}
             ></input>
@@ -60,7 +60,7 @@ const FirstPage = () => {
             <input
               type="email"
               id="email"
-              placeholder="mez3n1151@gmail.com"
+              placeholder="e.g. kapran@gmail.com"
               required
               onChange={(e) => setEmail(e.target.value)}
             ></input>
@@ -70,7 +70,7 @@ const FirstPage = () => {
             <input
               type="url"
               id="linked"
-              placeholder="e.g. https://www.linkedin.com/in/mazen-adel-0ba052256/"
+              placeholder="e.g. https://www.linkedin.com/in/KapranJames"
               required
               onChange={(e) => setLinked(e.target.value)}
             ></input>
@@ -81,7 +81,7 @@ const FirstPage = () => {
               type="url"
               id="porto"
               required
-              placeholder="e.g. Portfolio@MazenAdel.com"
+              placeholder="e.g. Portfolio@Kapran.com"
               onChange={(e) => setPortfolio(e.target.value)}
             ></input>
           </div>

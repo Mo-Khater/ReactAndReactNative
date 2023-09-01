@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./CSS/second-page.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
-import { createSlice } from "@reduxjs/toolkit";
 
 const SecondPage = () => {
   const [Degree, setDegree] = useState("");
@@ -55,12 +54,7 @@ const SecondPage = () => {
         ];
       });
   };
-  const collection = createSlice({
-    name: "projects",
-    initialState: {
-      Project: [Projects[0], Projects[1], Projects[2], Projects[3]],
-    },
-  });
+
 
   return (
     <div id="secondPage">

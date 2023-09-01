@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./CSS/third-page.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Language } from "../resume.page/sub/summary";
 
 const SecondPage = () => {
   const [Hobbies, setHob] = useState([]);
@@ -30,9 +31,6 @@ const SecondPage = () => {
   };
   const location = useLocation();
   const BackHandler = () => navigate("/Education");
-  const debug = () => {
-    console.log(location.state);
-  }
   const AddLang = () => {
     setiLan(lan + 1);
     setLangArr((prevprojects, index) => {
@@ -109,11 +107,10 @@ const SecondPage = () => {
         ];
       });
   };
-
-  function kapran() {
+  const debug =()=>{
     console.log(Programming);
     console.log(Hobbies);
-    console.log(languages);
+    console.log(languages)
   }
   return (
     <div id="thirdPage">
