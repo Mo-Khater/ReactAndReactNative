@@ -7,14 +7,12 @@ const Home = () => {
             <Header />
             <Section
                 id ={'resume'}
-                title={"Your Cover Letter"}
-                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
-            Easy prompts help you create the perfect
-            job-worthy cover letter effortlessly!`}
+                title={"Your Resume"}
+                description={`There is a simple test for you to get your information for your resume which help you to arrange resume structure`}
                 img={'../assets/cover-letter-made-easy.avif'}
-                text={'Create my letter'}
-                alt={'cover letter'}
-                link={'coverletter'}
+                text={'Create my resume'}
+                alt={'Resume'}
+                link={'Contact'}
                 />
             <Section
                 id ={'letter'}
