@@ -1,10 +1,11 @@
 import './resume.css';
 import { Contact, Education, Skills } from './sub/info';
-import { Summary, Language } from './sub/summary';
+import { Summary, Language, Hobbies } from './sub/summary';
 import { useRef } from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import jsPdf from 'jspdf';
 import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
 
 
 export default function ResumePage() {
@@ -16,7 +17,7 @@ export default function ResumePage() {
     const pageRef = useRef();
     function action() {
         const doc = new jsPdf({
-            format: 'a4',
+            format: 'a3',
             unit: 'px'
         });
         doc.html(pageRef.current, {
@@ -36,8 +37,8 @@ export default function ResumePage() {
                 top: window.innerHeight * .05,
             }}>
                 <section style={screen} ref={pageRef}>
-                    <aside style={info} >
-                        <div style={{ marginLeft: info.width * .15, paddingTop: 40 }} >
+                    <aside style={{ backgroundColor: "#323B4C", minHeight: 600, color: "white" }} >
+                        <div style={{ marginLeft: 15, paddingTop: 40 }} >
                             <Contact contactInfo={{
                                 address: location.state.address,
                                 email: location.state.email,
@@ -53,12 +54,13 @@ export default function ResumePage() {
                             <Skills skillsInfo={location.state.skills} />
                         </div>
                     </aside>
-                    <section style={summary} >
+                    <section style={{ marginLeft: 15 }} >
                         <Summary summaryInfo={{
                             name: location.state.name,
                             projects: location.state.projectsArr
                         }} />
                         <Language langsInfo={location.state.languages} />
+                        <Hobbies hobbsInfo={location.state.hobbies} />
                     </section>
                 </section>
             </div>
@@ -71,20 +73,10 @@ export default function ResumePage() {
 
 const screen = {
     backgroundColor: '#EBECF0',
-    display: 'flex',
-    flexDirection: 'row',
+    display: 'grid',
+    gridTemplateColumns: '1fr 2fr',
     width: window.innerWidth * .4,
-    minHeight: window.innerHeight * .85,
-};
-const info = {
-    backgroundColor: "#323B4C",
-    width: screen.width * .35,
-    color: "white",
-};
-
-const summary = {
-    width: screen.width - info.width,
-    marginLeft: info.width * .15
+    minHeight: 600,
 };
 
 const download = {

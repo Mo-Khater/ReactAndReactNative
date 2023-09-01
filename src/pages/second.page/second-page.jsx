@@ -30,31 +30,30 @@ const SecondPage = () => {
     navigate("/");
   };
   const AddProject = () => {
-      setipro(proj + 1);
-      setArr((prevprojects, index) => {
-        return [
-          ...prevprojects,
+    setipro(proj + 1);
+    setProjects(prev => [...prev, ''])
+    setArr((prevprojects, index) => {
+      return [
+        ...prevprojects,
 
-          <div className="Projects">
-            <input
-              type="text"
-              id={proj}
-              placeholder="e.g. Ecommerce website"
-              onChange={(e) => {
-                setProjects((prev) => {
-                  const value = e.target.value;
+        <div className="Projects">
+          <input
+            type="text"
+            id={proj}
+            placeholder="e.g. Ecommerce website"
+            onChange={(e) => {
+              setProjects((prev) => {
+                const value = e.target.value;
                 let key = parseInt(e.target.id);
                 if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
-                prev.filter(ele => ele === '');
                 return prev;
-                });
-              }}
-            ></input>
-          </div>,
-        ];
-      });
+              });
+            }}
+          ></input>
+        </div>,
+      ];
+    });
   };
-
 
   return (
     <div id="secondPage">

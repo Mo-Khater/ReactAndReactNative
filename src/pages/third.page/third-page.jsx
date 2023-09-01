@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./CSS/third-page.scss";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Language } from "../resume.page/sub/summary";
 
 const SecondPage = () => {
   const [Hobbies, setHob] = useState([]);
@@ -31,8 +30,10 @@ const SecondPage = () => {
   };
   const location = useLocation();
   const BackHandler = () => navigate("/Education");
+
   const AddLang = () => {
     setiLan(lan + 1);
+    setLang(prev => [...prev, ''])
     setLangArr((prevprojects, index) => {
       return [
         ...prevprojects,
@@ -46,7 +47,6 @@ const SecondPage = () => {
                 const value = e.target.value;
                 let key = parseInt(e.target.id);
                 if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
-                prev.filter(ele => ele === '');
                 return prev;
               });
             }}
@@ -58,6 +58,7 @@ const SecondPage = () => {
 
   const AddProg = () => {
     setiprog(prog + 1);
+    setProg(prev => [...prev, ''])
     setProgArr((prevprojects, index) => {
       return [
         ...prevprojects,
@@ -72,7 +73,6 @@ const SecondPage = () => {
                 const value = e.target.value;
                 let key = parseInt(e.target.id);
                 if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
-                prev.filter(ele => ele === '');
                 return prev;
               });
             }}
@@ -83,34 +83,35 @@ const SecondPage = () => {
   };
 
   const AddHobbie = () => {
-      setiHob(Hob + 1);
-      setHobArr((prevprojects, index) => {
-        return [
-          ...prevprojects,
+    setiHob(Hob + 1);
+    setHob(prev => [...prev, ''])
+    setHobArr((prevprojects, index) => {
+      return [
+        ...prevprojects,
 
-          <div className="Projects">
-            <input
-              type="text"
-              id={Hob}
-              placeholder="e.g. Fishing"
-              onChange={(e) => {
-                setHob((prev) => {
-                  const value = e.target.value;
-                  let key = parseInt(e.target.id);
-                  if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
-                  prev.filter(ele => ele === '');
-                  return prev;
-                });
-              }}
-            ></input>
-          </div>,
-        ];
-      });
+        <div className="Projects">
+          <input
+            type="text"
+            id={Hob}
+            placeholder="e.g. Fishing"
+            onChange={(e) => {
+              setHob((prev) => {
+                const value = e.target.value;
+                let key = parseInt(e.target.id);
+                if (key <= prev.length) { prev[key] = value; } else { prev = [...prev, value]; }
+                return prev;
+              });
+            }}
+          ></input>
+        </div>,
+      ];
+    });
   };
-  const debug =()=>{
+
+  function debug() {
     console.log(Programming);
     console.log(Hobbies);
-    console.log(languages)
+    console.log(languages);
   }
   return (
     <div id="thirdPage">

@@ -70,7 +70,7 @@ const FirstPage = () => {
             <input
               type="url"
               id="linked"
-              placeholder="e.g. https://www.linkedin.com/in/KapranJames"
+              placeholder="e.g. https://www.linkedin.com/in/KapranJames/"
               required
               onChange={(e) => setLinked(e.target.value)}
             ></input>

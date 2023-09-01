@@ -1,4 +1,6 @@
 import './summary.css';
+import React from 'react';
+
 
 
 
@@ -10,10 +12,15 @@ function Summary({ summaryInfo }) {
             <div className='box'>
                 <h3>Projects: </h3>
                 <ul className='list'>
-                    {summaryInfo.projects.map(ele => {
-                        return (
-                            <li><h5>{ele}</h5></li>
-                        );
+                    {summaryInfo.projects?.map(ele => {
+                        if (ele !== '') {
+                            return (
+                                <li><h5>{ele}</h5></li>
+                            );
+                        } else {
+                            return null;
+                        }
+
                     })}
                 </ul>
             </div>
@@ -25,13 +32,34 @@ function Language({ langsInfo }) {
     return (
         <div>
             <h3>Languages:</h3>
-            <ul>
+            <ul className='list'>
                 {langsInfo.map((val) => {
-                    return <li>{val}</li>;
+                    if (val !== '') {
+                        return <li className='list-item'>{val}</li>;
+                    } else {
+                        return null;
+                    }
                 })}
             </ul>
         </div>
     );
 }
 
-export { Summary, Language };
+function Hobbies({ hobbsInfo }) {
+    return (
+        <div>
+            <h3>Hobbies:</h3>
+            <ul className='list'>
+                {hobbsInfo.map((val) => {
+                    if (val !== '') {
+                        return <li className='list-item'>{val}</li>;
+                    } else {
+                        return null;
+                    }
+                })}
+            </ul>
+        </div>
+    );
+}
+
+export { Summary, Language, Hobbies };

@@ -1,5 +1,6 @@
-import { Value } from 'sass';
 import './info.css';
+import React from 'react';
+
 
 function Contact({ contactInfo }) {
 
@@ -33,11 +34,18 @@ function Education({ educationInfo }) {
         <div>
             <h4>Education</h4>
             <hr />
-            <span>{educationInfo.degree}</span>
-            <br />
-            <span>{educationInfo.institution}</span>
-            <br />
-            <span>{educationInfo.graduate}</span>
+            <ul>
+                <li>
+                    <h6>Degree</h6><span>{educationInfo.degree}</span>
+                </li>
+                <li>
+                    <h6>Institution</h6><span>{educationInfo.institution}</span>
+                </li>
+                <li>
+                    <h6>Graduate</h6><span>{educationInfo.graduate}</span>
+                </li>
+
+            </ul>
         </div>
     );
 
@@ -50,7 +58,11 @@ function Skills({ skillsInfo }) {
             <hr />
             <ul className='normal'>
                 {skillsInfo.map((val) => {
-                    return <li>{val}</li>;
+                    if (val !== '') {
+                        return (<li>{val}</li>);
+                    } else {
+                        return null;
+                    }
                 })}
             </ul>
         </div>

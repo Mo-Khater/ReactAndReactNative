@@ -18,3 +18,13 @@
     position: relative;
     left: 50%
 }
+
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list-item{
+    margin-right: 30px;
+}
