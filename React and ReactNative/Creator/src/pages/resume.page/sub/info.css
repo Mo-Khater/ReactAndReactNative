@@ -1,0 +1,36 @@
+h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10%;
+
+}
+span{
+    word-wrap:break-word;
+    font-size: larger;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    font-weight: lighter;
+    font-size: smaller;
+}
+
+li>h6 {
+    margin: 0;
+}
+
+li>span {
+    font-size: smaller;
+}
+
+ul.normal{
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 15px;
+}
