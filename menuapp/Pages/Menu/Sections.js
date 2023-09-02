@@ -9,6 +9,8 @@ export default function App({ menusections }) {
   const [isVisible, setIsVisible] = useState(true);
   const [isVisible1, setIsVisible1] = useState(false);
   const [btnprsd, setBtnprsd] = useState([]);
+  const [btnprsd1, setBtnprsd1] = useState([]);
+
   let displayView1 = (
     <View style={styles.homecont}>
       {
@@ -19,9 +21,9 @@ export default function App({ menusections }) {
               setIsVisible(false);
               setIsVisible1(true);
               setBtnprsd(menusection.dishes);
+              setBtnprsd1(menusection.section_name);
             }}
-            key={menusection.section_name}
-          >
+            key={menusection.section_name}>
             <Text style={styles.sectionName}>{menusection.section_name}</Text>
           </TouchableOpacity>
         ))
@@ -31,6 +33,9 @@ export default function App({ menusections }) {
   let displayView = (
     <View style={styles.newhomecont}>
       <ScrollView>
+      <View style={styles.back}>
+        <Text style={styles.sectionName}>{btnprsd1}</Text>
+      </View>
         {btnprsd.map((btnprsds) => (
           <View style={styles.mnutext} key={btnprsds.dish_name}>
             <Image style={styles.img} source={{ uri: btnprsds.image_url }} />
@@ -57,8 +62,17 @@ export default function App({ menusections }) {
   );
   
 }
-
 const styles = StyleSheet.create({
+  sectionNameTop:{
+    borderRadius: 10,
+    backgroundColor: '#E59866',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center', 
+    marginBottom: 10,
+    paddingHorizontal: 20,    
+  },
   back:{
     borderRadius: 10,
     paddingHorizontal: 20,
