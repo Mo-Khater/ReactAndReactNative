@@ -36,7 +36,7 @@ export default function ResumePage() {
         <>
             <Header />
             <div style={{}}>
-                <Navbar props={3} />
+                <Navbar props={4} />
                 <div style={{
                     position: "relative",
                     marginLeft: '30%',

@@ -4,6 +4,7 @@ import Home from "./Home"
 import FirstPage from "../pages/first.page/first-page";
 import SecondPage from "../pages/second.page/second-page";
 import ThirdPage from "../pages/third.page/third-page";
+import FourthPage from "../pages/fourth.page/fourth-page";
 import ResumePage from "../pages/resume.page/resume";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/Contact" element={<FirstPage />} />
             <Route path="/Education" element={<SecondPage />}></Route>
             <Route path="/Skills" element={<ThirdPage />}></Route>
+            <Route path="/Experience" element={<FourthPage />}></Route>
             <Route path='/Resume' element={<ResumePage />}></Route>
           </Routes>
         </div>

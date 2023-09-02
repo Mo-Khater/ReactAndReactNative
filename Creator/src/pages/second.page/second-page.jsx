@@ -40,7 +40,8 @@ const SecondPage = () => {
       return [
         ...prevprojects,
 
-        <div className="Projects">
+        <div className="Projects" id ={proj}>
+          <button onClick={del} name={proj}>X</button>
           <input
             type="text"
             id={proj}
@@ -58,7 +59,11 @@ const SecondPage = () => {
       ];
     });
   };
-
+  const del =(e)=>{
+    console.log(e.target.name);
+    const x=document.getElementById(e.target.name);
+    x.remove();
+  }
   return (
     <>
       <Header />

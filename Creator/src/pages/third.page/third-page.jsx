@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 
 
 
-const SecondPage = () => {
+const ThirdPage = () => {
   const [Hobbies, setHob] = useState([]);
   const [HobArr, setHobArr] = useState([]);
   const [Hob, setiHob] = useState(0);
@@ -23,7 +23,7 @@ const SecondPage = () => {
 
   const navigate = useNavigate();
   const NextHandler = () => {
-    navigate("/Resume", {
+    navigate("/Experience", {
       state: {
         ...location.state,
         hobbies: Hobbies,
@@ -41,7 +41,8 @@ const SecondPage = () => {
     setLangArr((prevprojects, index) => {
       return [
         ...prevprojects,
-        <div className="Projects">
+        <div className="Projects" id={lan+"lan"}>
+          <button onClick={del} name={lan+"lan"}>X</button>
           <input
             type="text"
             id={lan}
@@ -67,7 +68,8 @@ const SecondPage = () => {
       return [
         ...prevprojects,
 
-        <div className="Projects">
+        <div className="Projects" id={prog+"prog"}>
+           <button onClick={del} name={prog+"prog"}>X</button>
           <input
             type="text"
             id={prog}
@@ -93,7 +95,8 @@ const SecondPage = () => {
       return [
         ...prevprojects,
 
-        <div className="Projects">
+        <div className="Projects" id={Hob+"HOB"}>
+          <button onClick={del} name={Hob+"HOB"}>X</button>
           <input
             type="text"
             id={Hob}
@@ -111,7 +114,11 @@ const SecondPage = () => {
       ];
     });
   };
-
+  const del =(e)=>{
+    console.log(e.target.name);
+    const x=document.getElementById(e.target.name);
+    x.remove();
+  }
   function debug() {
     console.log(Programming);
     console.log(Hobbies);
@@ -176,4 +183,4 @@ const SecondPage = () => {
   );
 };
 
-export default SecondPage;
+export default ThirdPage;

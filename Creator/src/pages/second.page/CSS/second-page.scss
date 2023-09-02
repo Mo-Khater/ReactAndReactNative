@@ -89,6 +89,19 @@ $imgpath:"../../../assets/information-2.jpg";
         border-width: 2px;
         
     }
+    .Projects{
+        button{
+          background-color: #102c57;
+          color: white;
+          width: 25px;
+          height: 25px;
+          border-radius: 5px ;
+          margin:14px 10px 10px 30px;
+          font-size: 15px;
+        }
+        display: flex;
+       
+      }
     .Next{
         background-color: #102c57;
         color: white;

@@ -96,6 +96,19 @@
       border-style: solid;
       border-color: #8f8e8e;
     }
+    .Projects{
+      button{
+        background-color: #102c57;
+        color: white;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px ;
+        margin:14px 10px 10px 30px;
+        font-size: 15px;
+      }
+      display: flex;
+     
+    }
     .projectWrapper {
       display: flex;
       flex-flow: row wrap;
