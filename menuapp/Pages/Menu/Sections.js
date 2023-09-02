@@ -7,8 +7,27 @@ const Stack = createNativeStackNavigator();
 
 export default function App({ menusections }) {
   const [isVisible, setIsVisible] = useState(true);
+  const [isVisible1, setIsVisible1] = useState(false);
   const [btnprsd, setBtnprsd] = useState([]);
-
+  let displayView1 = (
+    <View style={styles.homecont}>
+      {
+        menusections.map((menusection) => (
+          <TouchableOpacity
+            style={styles.buttons}
+            onPress={() => {
+              setIsVisible(false);
+              setIsVisible1(true);
+              setBtnprsd(menusection.dishes);
+            }}
+            key={menusection.section_name}
+          >
+            <Text style={styles.sectionName}>{menusection.section_name}</Text>
+          </TouchableOpacity>
+        ))
+      }
+    </View>
+  );
   let displayView = (
     <View style={styles.newhomecont}>
       <ScrollView>
@@ -21,33 +40,36 @@ export default function App({ menusections }) {
             <Text style={styles.rating}>Rating: {btnprsds.rating}</Text>
           </View>
         ))}
+        <TouchableOpacity style={styles.back} onPress={() => {
+              setIsVisible(true);
+              setIsVisible1(false);
+            }}>
+          <Text style={styles.sectionName}>Go Back</Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
 
   return (
     <View style={styles.homecont}>
-      {isVisible ? (
-        menusections.map((menusection) => (
-          <TouchableOpacity
-            style={styles.buttons}
-            onPress={() => {
-              setIsVisible(false);
-              setBtnprsd(menusection.dishes);
-            }}
-            key={menusection.section_name}
-          >
-            <Text style={styles.sectionName}>{menusection.section_name}</Text>
-          </TouchableOpacity>
-        ))
-      ) : (
-        displayView
-      )}
+      {isVisible ? (isVisible1 ? displayView : displayView1) : displayView}
     </View>
   );
+  
 }
 
 const styles = StyleSheet.create({
+  back:{
+    borderRadius: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginBottom: 10,
+    backgroundColor: '#E59866',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center', 
+    flex: 1
+  },
   mnutext: {
     borderRadius: 10,
     padding: 20,
@@ -107,5 +129,6 @@ const styles = StyleSheet.create({
   scrollContainer: {
     alignItems: 'center',
     paddingVertical: 20,
+    flex: 1
   },
 });
