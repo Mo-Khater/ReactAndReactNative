@@ -7,8 +7,8 @@ import AboutPage from '../menuapp/Pages/about';
 import SectionsPage from '../menuapp/Pages/Menu/Sections';
 
 function HomeScreen({ navigation }) {
-  return (
-    <ImageBackground style={styles.shome} source={require('../menuapp/images/img1.png')}>
+  return (//https://th.bing.com/th/id/R.da2fb133ca227b068b2b70b39ebd1643?rik=lpLFFJCGLT4igA&pid=ImgRaw&r=0
+    <ImageBackground style={styles.shome} source={{ uri: 'https://th.bing.com/th/id/R.650463f609138f6c59c85720847225ea?rik=oPOTUBx8ylm0qQ&pid=ImgRaw&r=0&sres=1&sresct=1' }}>
       <Text style={styles.logo}>{ourmenu.restaurant_name}</Text>
       <View style={styles.homecont}>
         <TouchableOpacity style={styles.buttons} onPress={() => navigation.navigate('Sections')}>
