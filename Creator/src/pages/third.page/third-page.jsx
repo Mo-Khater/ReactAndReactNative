@@ -1,25 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useContext,useRef  } from "react";
 import "./CSS/third-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from "../../components/App";
 
 
 
 const ThirdPage = () => {
-  const [Hobbies, setHob] = useState([]);
-  const [HobArr, setHobArr] = useState([]);
-  const [Hob, setiHob] = useState(0);
-
-  const [Programming, setProg] = useState([]);
-  const [ProgArr, setProgArr] = useState([]);
-  const [prog, setiprog] = useState(0);
-
-  const [languages, setLang] = useState([]);
-  const [LangArr, setLangArr] = useState([]);
-  const [lan, setiLan] = useState(0);
+  const { Programming,Hobbies,languages, setHob, HobArr, setHobArr, Hob, setiHob, setProg, ProgArr, setProgArr, prog, setiprog, setLang, LangArr, setLangArr, lan, setiLan } = useContext(StateContext);
+  const index=0;
 
   const navigate = useNavigate();
   const NextHandler = () => {
