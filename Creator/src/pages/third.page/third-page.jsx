@@ -1,38 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import "./CSS/third-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from "../../components/App";
 
 
 
 const ThirdPage = () => {
-  const [Hobbies, setHob] = useState([]);
-  const [HobArr, setHobArr] = useState([]);
-  const [Hob, setiHob] = useState(0);
+  const {  setHob, HobArr, setHobArr, Hob, setiHob, setProg, ProgArr, setProgArr, prog, setiprog, setLang, LangArr, setLangArr, lan, setiLan } = useContext(StateContext);
 
-  const [Programming, setProg] = useState([]);
-  const [ProgArr, setProgArr] = useState([]);
-  const [prog, setiprog] = useState(0);
-
-  const [languages, setLang] = useState([]);
-  const [LangArr, setLangArr] = useState([]);
-  const [lan, setiLan] = useState(0);
 
   const navigate = useNavigate();
   const NextHandler = () => {
-    navigate("/Experience", {
-      state: {
-        ...location.state,
-        hobbies: Hobbies,
-        skills: Programming,
-        languages: languages,
-      },
-    });
+    navigate("/Experience");
   };
-  const location = useLocation();
   const BackHandler = () => navigate("/Education");
 
   const AddLang = () => {
@@ -120,9 +104,9 @@ const ThirdPage = () => {
     x.remove();
   }
   function debug() {
-    console.log(Programming);
-    console.log(Hobbies);
-    console.log(languages);
+    // console.log(Programming);
+    // console.log(Hobbies);
+    // console.log(languages);
   }
   return (
     <>

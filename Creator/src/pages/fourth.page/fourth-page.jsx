@@ -1,26 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import "./CSS/fourth-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from "../../components/App";
 
 
 const FourthPage = () => {
-  const [Experince, setExperience] = useState([]);
-  const [ExpArr, setExpArr] = useState([]);
-  const [Exp, setiExp] = useState(0);
+  const {Experince, setExperience, ExpArr, setExpArr, Exp, setiExp} = useContext(StateContext);
   const navigate = useNavigate();
   const NextHandler = () => {
-    navigate("/Resume", {
-      state: {
-        ...location.state,
-        Experince: Experince,
-      },
-    });
+    navigate("/Resume");
   };
-  const location = useLocation();
   const BackHandler = () => navigate("/Skills");
 
   const AddExperince = () => {

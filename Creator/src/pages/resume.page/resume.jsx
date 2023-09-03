@@ -1,37 +1,25 @@
 import './resume.css';
 import { Contact, Education, Skills } from './sub/info';
-import { Summary, Language, Hobbies } from './sub/summary';
-import { useRef } from 'react';
+import { Summary, Language, Hobbs } from './sub/summary';
+import { useRef, useContext } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import jsPdf from 'jspdf';
 import ReactToPrint from 'react-to-print'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
-import Header from "../../components/PageStructure/Header";
-import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from '../../components/App';
+import Header from '../../components/PageStructure/Header';
+import Footer from '../../components/PageStructure/Footer';
 
 
 
 export default function ResumePage() {
-    const location = useLocation();
+    const { fullName, address, Phone, email, LinkedIn, Protfolio, Degree, Institution, Graduation, Projects, Hobbies, Programming, languages, Experince } = useContext(StateContext);
     const navigate = useNavigate();
     const back = () => {
-        navigate('/Skills');
+        navigate('/Experience');
     }
     const pageRef = useRef();
-    function action() {
-        const doc = new jsPdf({
-            format: 'a3',
-            unit: 'px'
-        });
-        doc.html(pageRef.current, {
-            async callback(doc) {
-                doc.save('resume');
-            },
-        });
-
-    }
-    console.log(location.state);
+    console.log(fullName, address, Phone, email, LinkedIn, Protfolio, Degree, Institution, Graduation, Projects, Hobbies, Programming, languages, Experince);
     return (
         <>
             <Header />
@@ -39,42 +27,28 @@ export default function ResumePage() {
                 <Navbar props={4} />
                 <div style={{
                     position: "relative",
-                    marginLeft: '30%',
+                    marginLeft: '25%',
                     top: 50,
                 }}>
                     <section style={screen} ref={pageRef}>
                         <aside style={{ backgroundColor: "#323B4C", minHeight: 700, color: "white" }} >
                             <div style={{ marginLeft: 15, paddingTop: 40 }} >
-                                <Contact contactInfo={{
-                                    address: location.state.address,
-                                    email: location.state.email,
-                                    phone: location.state.Phone,
-                                    linkedin: location.state.LinkedIn,
-                                    portfolio: location.state.Protfolio
-                                }} />
-                                <Education educationInfo={{
-                                    institution: location.state.institution,
-                                    degree: location.state.degree,
-                                    graduate: location.state.graduate
-                                }} />
-                                <Skills skillsInfo={location.state.skills} />
+                                <Contact contactInfo={{ address, email, Phone, LinkedIn, Protfolio }} />
+                                <Education educationInfo={{ Institution, Degree, Graduation }} />
+                                <Skills skillsInfo={Programming} />
                             </div>
                         </aside>
                         <section style={{ marginLeft: 15 }} >
-                            <Summary summaryInfo={{
-                                name: location.state.name,
-                                projects: location.state.projectsArr
-                            }} />
-                            <Language langsInfo={location.state.languages} />
-                            <Hobbies hobbsInfo={location.state.hobbies} />
+                            <Summary summaryInfo={{ fullName, Experince, Projects }} />
+                            <Language langsInfo={languages} />
+                            <Hobbs hobbsInfo={Hobbies} />
                         </section>
                     </section>
                 </div>
-                {/* <button style={download} onClick={action}>download pdf</button> */}
                 <ReactToPrint
-                trigger={() => <button style={download}>Convert to PDF</button>}
-                content={() => pageRef.current}
-            />
+                    trigger={() => <button style={download}>Convert to PDF</button>}
+                    content={() => pageRef.current}
+                />
                 <button style={goBack} onClick={back}>Back</button>
             </div>
             <Footer />
@@ -87,8 +61,8 @@ const screen = {
     backgroundColor: '#EBECF0',
     display: 'grid',
     gridTemplateColumns: '1fr 2fr',
-    width: 650,
-    minHeight: 700,
+    width: '210mm',
+    minHeight: '297mm',
 };
 
 const download = {

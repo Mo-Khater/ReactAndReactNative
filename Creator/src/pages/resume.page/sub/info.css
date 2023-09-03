@@ -4,9 +4,12 @@ h4 {
     padding-top: 10%;
 
 }
+h3{
+    font-size: x-large;
+}
 span{
     word-wrap:break-word;
-    font-size: larger;
+    /* font-size: larger; */
 }
 
 ul {
@@ -18,7 +21,7 @@ ul {
 li {
     margin-bottom: 10px;
     font-weight: lighter;
-    font-size: smaller;
+    /* font-size: smaller; */
 }
 
 li>h6 {
@@ -26,7 +29,7 @@ li>h6 {
 }
 
 li>span {
-    font-size: smaller;
+    /* font-size: smaller; */
 }
 
 ul.normal{
