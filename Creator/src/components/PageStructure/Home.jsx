@@ -9,7 +9,7 @@ const Home = () => {
                 id ={'resume'}
                 title={"Your Resume"}
                 description={`There is a simple test for you to get your information for your resume which help you to arrange resume structure`}
-                img={'../assets/cover-letter-made-easy.avif'}
+                img={'Combination_resume.avif'}
                 text={'Create my resume'}
                 alt={'Resume'}
                 link={'Contact'}

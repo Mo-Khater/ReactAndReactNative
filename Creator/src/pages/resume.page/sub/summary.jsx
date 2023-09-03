@@ -11,12 +11,19 @@ function Summary({ summaryInfo }) {
             <h2>{summaryInfo.fullName}</h2>
             <div className='box'>
                 <h3>Experience: </h3>
-                <ul style={{listStyle:'dosc'}}>
+                <ul style={{ listStyle: 'dosc' }}>
                     {summaryInfo.Experince?.map(ele => {
-                        if (ele !== '') {
+                        let check = false;
+                        for ( let key in ele) {
+                            if (ele[key] !== '') {
+                                check = true;
+                                break;
+                            }
+                        }
+                        if (check) {
                             return (
                                 <li>
-                                    <h5 style={{display:'inline-block'}}>{ele.jobTitle} </h5><span> {ele.From}/{ele.To}</span><br />
+                                    <h5 style={{ display: 'inline-block' }}>{ele.JobTitle} </h5><span> {ele.From}/{ele.To}</span><br />
                                     <h5>{ele.JobDesc}</h5>
                                 </li>
                             );
