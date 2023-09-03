@@ -63,6 +63,7 @@ const SecondPage = () => {
 function debug (){
   console.log(Projects);
 }
+
   return (
     <>
       <Header />
