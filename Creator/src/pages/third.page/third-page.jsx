@@ -1,38 +1,23 @@
 import React from "react";
-import { useState } from "react";
+import { useContext,useRef  } from "react";
 import "./CSS/third-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from "../../components/App";
+
 
 
 
 const ThirdPage = () => {
-  const [Hobbies, setHob] = useState([]);
-  const [HobArr, setHobArr] = useState([]);
-  const [Hob, setiHob] = useState(0);
-
-  const [Programming, setProg] = useState([]);
-  const [ProgArr, setProgArr] = useState([]);
-  const [prog, setiprog] = useState(0);
-
-  const [languages, setLang] = useState([]);
-  const [LangArr, setLangArr] = useState([]);
-  const [lan, setiLan] = useState(0);
+  const { Programming,Hobbies,languages, setHob, HobArr, setHobArr, Hob, setiHob, setProg, ProgArr, setProgArr, prog, setiprog, setLang, LangArr, setLangArr, lan, setiLan } = useContext(StateContext);
+  const index=0;
 
   const navigate = useNavigate();
   const NextHandler = () => {
-    navigate("/Experience", {
-      state: {
-        ...location.state,
-        hobbies: Hobbies,
-        skills: Programming,
-        languages: languages,
-      },
-    });
+    navigate("/Experience");
   };
-  const location = useLocation();
   const BackHandler = () => navigate("/Education");
 
   const AddLang = () => {
@@ -41,11 +26,12 @@ const ThirdPage = () => {
     setLangArr((prevprojects, index) => {
       return [
         ...prevprojects,
-        <div className="Projects" id={lan+"lan"}>
-          <button onClick={del} name={lan+"lan"}>X</button>
+        <div className="Projects" id={lan+" lan"}>
+          <button onClick={delLang} name={lan+" lan"}>X</button>
           <input
             type="text"
             id={lan}
+           // value={lan[index++]}
             placeholder="e.g. Arabic"
             onChange={(e) => {
               setLang((prev) => {
@@ -68,8 +54,8 @@ const ThirdPage = () => {
       return [
         ...prevprojects,
 
-        <div className="Projects" id={prog+"prog"}>
-           <button onClick={del} name={prog+"prog"}>X</button>
+        <div className="Projects" id={prog+" prog"}>
+           <button onClick={delProg} name={prog+" prog"}>X</button>
           <input
             type="text"
             id={prog}
@@ -95,8 +81,8 @@ const ThirdPage = () => {
       return [
         ...prevprojects,
 
-        <div className="Projects" id={Hob+"HOB"}>
-          <button onClick={del} name={Hob+"HOB"}>X</button>
+        <div className="Projects" id={Hob+" HOB"}>
+          <button onClick={delHob} name={Hob+" HOB"}>X</button>
           <input
             type="text"
             id={Hob}
@@ -114,15 +100,54 @@ const ThirdPage = () => {
       ];
     });
   };
-  const del =(e)=>{
+  const delHob =(e)=>{
     console.log(e.target.name);
     const x=document.getElementById(e.target.name);
-    x.remove();
+    x.classList.add("hidden");
+    const index= e.target.name.split(' ');
+    setHob((prev)=>{
+      prev[index[0]]="";
+      return prev;
+    })
+    setHobArr((prev)=>{
+      prev[index[0]]="";
+      return prev;
+    })
+  }
+  const delProg =(e)=>{
+    console.log(e.target.name);
+    const x=document.getElementById(e.target.name);
+    x.classList.add("hidden");
+    const index= e.target.name.split(' ');
+    setProg((prev)=>{
+      prev[index[0]]="";
+      return prev;
+    })
+    setProgArr((prev)=>{
+      prev[index[0]]="";
+      return prev;
+    })
+
+  }
+  const delLang =(e)=>{
+    console.log(e.target.name);
+    const x=document.getElementById(e.target.name);
+    x.classList.add("hidden");
+    const index= e.target.name.split(' ');
+    setLang((prev)=>{
+      prev[index[0]]="";
+      return prev;
+    })
+    setLangArr((prev)=>{
+      prev[index[0]]="";
+      return prev;
+    })
   }
   function debug() {
-    console.log(Programming);
-    console.log(Hobbies);
-    console.log(languages);
+    console.log(ProgArr);
+     console.log(Programming);
+     console.log(languages);
+     console.log(Hobbies);
   }
   return (
     <>

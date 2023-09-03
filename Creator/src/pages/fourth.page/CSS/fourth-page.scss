@@ -140,6 +140,7 @@
       display: flex;
       justify-content: flex-start;
       flex-flow: row nowrap;
+     
     }
     .projectWrapper {
       display: flex;
@@ -152,8 +153,9 @@
       width: 250px;
       background-color: #102c57;
     }
+    .hidden{
+      display: none;
+    } 
   }
-  .hide{
-    display: none;
-  }
+  
 }

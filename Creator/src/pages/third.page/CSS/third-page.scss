@@ -76,7 +76,7 @@
       display: flex;
       width: 94%;
       justify-content: space-between;
-      margin-bottom: 3.5px;
+      
     }
     button {
       width: 100px;
@@ -119,6 +119,9 @@
       color: white;
       width: 250px;
       background-color: #102c57;
+    }
+    .hidden{
+      display: none ;
     }
   }
 }

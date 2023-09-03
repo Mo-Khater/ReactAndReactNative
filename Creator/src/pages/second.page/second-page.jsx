@@ -1,34 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import "./CSS/second-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from "../../components/App";
 
 
 
 const SecondPage = () => {
-  const [Degree, setDegree] = useState("");
-  const [Institution, setInit] = useState("");
-  const [Graduation, setDate] = useState("");
-
-  const [Projects, setProjects] = useState([]);
-  const [projectArr, setArr] = useState([]);
-  const [proj, setipro] = useState(0);
+  const { Degree, setDegree, Institution, setInit, Graduation, setDate, Projects, setProjects, projectArr, setArr, proj, setipro } = useContext(StateContext);
 
   const navigate = useNavigate();
-  const location = useLocation();
   const NextHandler = () => {
-    navigate("/Skills", {
-      state: {
-        ...location.state,
-        degree: Degree,
-        institution: Institution,
-        graduate: Graduation,
-        projectsArr: Projects,
-      },
-    });
+    navigate("/Skills");
   };
   const BackHandler = () => {
     navigate("/Contact");
@@ -40,12 +26,13 @@ const SecondPage = () => {
       return [
         ...prevprojects,
 
-        <div className="Projects" id ={proj}>
+        <div className="Projects" id={proj}>
           <button onClick={del} name={proj}>X</button>
           <input
             type="text"
             id={proj}
             placeholder="e.g. Ecommerce website"
+            //value={Projects[0]}
             onChange={(e) => {
               setProjects((prev) => {
                 const value = e.target.value;
@@ -59,11 +46,23 @@ const SecondPage = () => {
       ];
     });
   };
-  const del =(e)=>{
+  const del = (e) => {
     console.log(e.target.name);
     const x=document.getElementById(e.target.name);
-    x.remove();
-  }
+    x.classList.add("hidden");
+    const index= e.target.name
+    setProjects((prev)=>{
+      prev[index]="";
+      return prev;
+  });
+  setArr((prev)=>{
+    prev[index]="";
+    return prev;
+});
+}
+function debug (){
+  console.log(Projects);
+}
   return (
     <>
       <Header />
@@ -77,6 +76,7 @@ const SecondPage = () => {
               <input
                 type="text"
                 id="fullName"
+                value={Degree}
                 required
                 placeholder="e.g. Engineering"
                 onChange={(e) => setDegree(e.target.value)}
@@ -87,6 +87,7 @@ const SecondPage = () => {
               <input
                 type="text"
                 id="address"
+                value={Institution}
                 placeholder="e.g. Cairo University"
                 required
                 onChange={(e) => setInit(e.target.value)}
@@ -100,6 +101,7 @@ const SecondPage = () => {
                 max="2099"
                 step="1"
                 id="email"
+                value={Graduation}
                 placeholder="e.g. 2023"
                 required
                 onChange={(e) => {
@@ -126,6 +128,7 @@ const SecondPage = () => {
               <button className="Next" onClick={NextHandler}>
                 Next
               </button>
+              <button onClick={debug}>debug</button>
             </div>
           </div>
           <div className="BackgroundImg"></div>

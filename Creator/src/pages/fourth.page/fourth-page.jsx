@@ -1,33 +1,26 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import "./CSS/fourth-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
+import { StateContext } from "../../components/App";
 
 
 const FourthPage = () => {
-  const [Experince, setExperience] = useState([]);
-  const [ExpArr, setExpArr] = useState([]);
-  const [Exp, setiExp] = useState(0);
+  const {Experince, setExperience, ExpArr, setExpArr, Exp, setiExp} = useContext(StateContext);
   const navigate = useNavigate();
   const NextHandler = () => {
-    navigate("/Resume", {
-      state: {
-        ...location.state,
-        Experince: Experince,
-      },
-    });
+    navigate("/Resume");
   };
-  const location = useLocation();
   const BackHandler = () => navigate("/Skills");
 
   const AddExperince = () => {
     setiExp(Exp + 1);
     setExperience((prev) => [
       ...prev,
-      { jobTitle: "", JobDesc: "", From: "", To: "" },
+      { JobTitle: "", JobDesc: "", From: "", To: "" },
     ]);
     setExpArr((prevprojects, index) => {
       return [
@@ -39,13 +32,13 @@ const FourthPage = () => {
             <input
               type="text"
               name={Exp}
-              placeholder="e.g. Junior Software Engineer"
+              placeholder="e.g. Junior Software Eng."
               onChange={(e) => {
                 setExperience((prev) => {
                   const value = e.target.value;
                   let key = parseInt(e.target.name);
                   if (key <= prev.length) {
-                    prev[key].jobTitle = value;
+                    prev[key].JobTitle = value;
                   } else {
                     prev = [...prev, { jobTitle: value }];
                   }
@@ -121,7 +114,19 @@ const FourthPage = () => {
   const del =(e)=>{
     console.log(e.target.name);
     const x=document.getElementById(e.target.name);
-    x.remove();
+    x.classList.add("hidden");
+    const index= e.target.name
+    setExperience((prev)=>{
+      prev[index].To="";
+      prev[index].From="";
+      prev[index].JobTitle="";
+      prev[index].JobDesc="";
+      return prev;
+    })
+    setExpArr((prev)=>{
+      prev[index]="";
+      return prev;
+    })
   }
   function debug() {
     console.log(Experince);
