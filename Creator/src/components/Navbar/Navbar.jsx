@@ -1,12 +1,12 @@
 import React from "react";
 import "./CSS/Navbar.scss";
-import Stepper from "../Imported/stepper";
+import ResumeStepper from "../Imported/stepperResume";
 const Navbar =({props})=>{
 
 
     return(
         <div className="NavWrap">
-           <Stepper props={props}/>
+           <ResumeStepper props={props}/>
         </div>
     );
 

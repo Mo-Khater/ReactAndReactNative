@@ -12,7 +12,7 @@ const steps = [
   'Resume'
 ];
 
-export  function ResumeStepper({props}) {
+function ResumeStepper({props}) {
   return (
     <Box sx={{ width: '60%'}}>
       <Stepper activeStep={props} alternativeLabel>
@@ -25,3 +25,5 @@ export  function ResumeStepper({props}) {
     </Box>
   );
 }
+
+export default ResumeStepper;
