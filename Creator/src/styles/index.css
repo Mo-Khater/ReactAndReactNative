@@ -10,6 +10,7 @@ html{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 100px;
 }
 
 header h1 {
@@ -153,7 +154,7 @@ footer {
   min-height: 100px;
   color: white;
   border-radius: 0 0 0 80px;
-  margin-top: 50px;
+  margin-top: 200px;
   padding: 50px;
 }
 footer p{
