@@ -174,14 +174,16 @@ footer ul {
 footer ul li{
   padding-bottom: 1em;
   padding-top: 1em;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 footer .flex-container-footer p{
   text-align: start;
   margin-top: 50px;
   margin-bottom: 50px;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
 }
 footer .flex-container-footer .text{
   margin-top: 70px;
@@ -193,8 +195,13 @@ footer .info{
   padding: 5px;
 }
 footer h2{
-  font-size: 30px;
+  font-size: 35px;
+  font-weight: bold;
   color: red;
+}
+footer h4{
+  font-size: 22px;
+  font-weight: bold;
 }
 footer a{
   text-decoration: none;
@@ -219,17 +226,28 @@ footer a{
 @media only screen and (max-width: 800px) {
   footer .flex-container-footer p{
     font-size: 13px;
+    font-weight: bold;
+
   }
   footer ul li{
   font-size: 13px;
+  font-weight: bold;
   }
+  footer h4{
+  font-size: 15px;
+}
 }
 @media only screen and (max-width: 700px) {
   footer .flex-container-footer p{
     font-size: 12px;
+    font-weight: bold;
   }
   footer ul li{
-  font-size: 12px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+   footer h4{
+    font-size: 14px;
   }
 }
 #unit{
