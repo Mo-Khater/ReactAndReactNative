@@ -3,7 +3,7 @@ const Header = () => {
     return (
         <header id= "header" className="header">
             <div>
-                <h1 className="title"><span>CREATOR</span></h1>
+                <h1 className="title">CREATOR</h1>
             </div>
             <div className="nav">
                 <ul>

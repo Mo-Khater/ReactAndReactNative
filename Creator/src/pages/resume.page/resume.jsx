@@ -7,8 +7,8 @@ import jsPdf from 'jspdf';
 import ReactToPrint from 'react-to-print'
 import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/PageStructure/Header";
+import Footer from "../../components/PageStructure/Footer";
 
 
 

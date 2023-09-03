@@ -11,16 +11,16 @@ html{
   flex-direction: row;
   justify-content: space-between;
 }
-.header span{
-  color: red;
-}
+
 header h1 {
   text-align: left;
   padding: 20px 0;
+  color: red;
+  font-size: 50px;
+  margin-top: 0px;
 }
 .nav{
   margin: 50px;
-
 }
 .nav ul{
   list-style-type: none;
@@ -32,6 +32,7 @@ header h1 {
 .nav .a{
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 
 .flex-container-section h2 {
@@ -81,7 +82,7 @@ header h1 {
   margin: 50px 0px;
   gap: 50px;
 }
-.flex-container-section a{
+.flex-container-section a, .flex-container-select a{
   min-width: 250px;
   font-size: 2rem;
   font-weight: 800;
@@ -102,12 +103,12 @@ header h1 {
   margin-top: 50px;
 }
 
-.flex-container-section a:hover {
+.flex-container-section a:hover, .flex-container-select a:hover {
   background-color: rgb(189, 2, 2);
   cursor: pointer;
 }
 
-.flex-container-section a:active {
+.flex-container-section a:active,.flex-container-select a:active {
   background-color: rgb(74, 2, 2);
 }
 .flex-container-section p{
@@ -117,6 +118,34 @@ header h1 {
 }
 .flex-container-section span{
   color: red;
+}
+.flex-container-select{
+  background-color: black;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px;
+  margin: 50px 50px;
+}
+.flex-container-select a{
+  font-size: 1.5rem;
+  min-height: 25px;
+  min-width: 200px;
+  border-radius: 25px;
+  padding: 5px 5px;
+  margin-left: 20%;
+}
+.upper-select{
+  display: flex;
+  flex-direction:row ;
+  margin-bottom: 500px;
+}
+.flex-container-select img{
+  width: 300px;
+  height: 300px;
 }
 footer {
   position: relative;
@@ -138,13 +167,13 @@ footer p{
   background: black;
   
 }
-
 footer ul {
   list-style-type: none;
   padding-left: 0px;
 }
 footer ul li{
   padding-bottom: 1em;
+  padding-top: 1em;
   font-size: 13px;
 }
 
@@ -161,10 +190,10 @@ footer .flex-container-footer .text{
 footer .info{
   display: flex;
   flex-direction: column;
-  padding: 59x;
+  padding: 5px;
 }
 footer h2{
-  font-size: 24px;
+  font-size: 30px;
   color: red;
 }
 footer a{
@@ -175,12 +204,24 @@ footer a{
   .flex-container-section{
     flex-direction: column-reverse;
   }
+  .upper-select{
+    display: inline-block;  
+  }
+  footer{
+    padding: 2%;
+  }
+  footer .flex-container-footer p{
+    font-size: 10px;
+  }
   .flex-container-section img{
     width: 200px;
     height: 200px;
   }
 }
-/*  */
+#unit{
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
 #target{
   background-color: white;
 }

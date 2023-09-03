@@ -12,7 +12,7 @@ const Section = ({id, title, description, link, text, alt,img }) => {
           <Link to={`/${link}`}>{text}</Link>
         </article>
         <figure>
-          <img src= {require('../assets/cover-letter-made-easy.avif')} alt={alt} />
+          <img src= {require('../../assets/cover-letter-made-easy.avif')} alt={alt} />
         </figure>
       </section>
     );

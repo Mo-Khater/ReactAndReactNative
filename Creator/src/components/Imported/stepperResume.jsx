@@ -6,18 +6,19 @@ import StepLabel from '@mui/material/StepLabel';
 
 const steps = [
   'Contact Information',
-  'Target Job',
-  'About',
-  'Letter'
+  'Education',
+  'Skills',
+  'Experience',
+  'Resume'
 ];
 
-export default function HorizontalLinearAlternativeLabelStepper({props}) {
+export  function ResumeStepper({props}) {
   return (
     <Box sx={{ width: '60%'}}>
       <Stepper activeStep={props} alternativeLabel>
-        {steps.map((label) => (
-          <Step  key={label}  >
-            <StepLabel><div style={{color:'white', fontSize:20 }}>{label}</div></StepLabel>
+        {steps.map((kapran) => (
+          <Step  key={kapran}  >
+            <StepLabel><div style={{color:'white', fontSize:20 }}>{kapran}</div></StepLabel>
           </Step>
         ))}
       </Stepper>

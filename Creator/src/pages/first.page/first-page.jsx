@@ -3,8 +3,8 @@ import { useState } from "react";
 import "./CSS/first-page.scss";
 import Navbar from "../../components/Navbar/Navbar"
 import { useNavigate } from 'react-router-dom';
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/PageStructure/Header";
+import Footer from "../../components/PageStructure/Footer";
 
 
 const FirstPage = () => {

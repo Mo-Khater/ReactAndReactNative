@@ -3,8 +3,9 @@ import { useState } from "react";
 import "./CSS/fourth-page.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/PageStructure/Header";
+import Footer from "../../components/PageStructure/Footer";
+
 
 const FourthPage = () => {
   const [Experince, setExperience] = useState([]);

@@ -23,7 +23,7 @@ const Home = () => {
                 img={'cover-letter-made-easy.avif'}
                 text={'Create my letter'}
                 alt={'cover letter'}
-                link={'coverletter'}
+                link={'CoverSelect'}
                 />
             <Section
                 id ={'portfolio'}
@@ -35,18 +35,7 @@ const Home = () => {
                 text={'Create my letter'}
                 alt={'cover letter'}
                 link={'coverletter'}
-                />
-            <Section
-                id ={'about'}
-                title={"Your Cover Letter"}
-                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
-            Easy prompts help you create the perfect
-            job-worthy cover letter effortlessly!`}
-                img={'cover-letter-made-easy.avif'}
-                text={'Create my letter'}
-                alt={'cover letter'}
-                link={'coverletter'}
-                />       
+                />     
             <Footer/>
         </div>
     )
