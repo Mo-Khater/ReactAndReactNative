@@ -1,28 +1,35 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
 import "./CSS/first-page.scss";
-import Navbar from "../../Navbar/Navbar";
-import { useNavigate } from 'react-router-dom';
+import Navbar from "../Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 import Header from "../../PageStructure/Header";
 import Footer from "../../PageStructure/Footer";
-
-let data;
+import { StateContext } from "../../App";
 
 const FirstStep = () => {
-  const [fullName, setName] = useState(data?.name||"");
-  const [country, setCountry] = useState(data?.country||"");
-  const [phone, setPhone] = useState(data?.phone||"");
-  const [email, setEmail] = useState(data?.email||"");
+  const {
+    fullName,
+    setName,
+    country,
+    setCountry,
+    Phone,
+    setPhone,
+    email,
+    setEmail,
+  } = useContext(StateContext);
 
   const navigate = useNavigate();
+
   const NextHandler = () => {
-    data = { name: fullName, country, phone, email };
-    navigate("/SecondStep", { state: { name: fullName, country, phone, email} });
+    navigate("/SecondStep");
   };
-  const BackHandler = () => { navigate('/') };
-  
+
+  const BackHandler = () => {
+    navigate("/");
+  };
+
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     NextHandler();
   };
 
@@ -44,7 +51,7 @@ const FirstStep = () => {
                   placeholder="e.g. Kapran James"
                   value={fullName}
                   onChange={(e) => setName(e.target.value)}
-                ></input>
+                />
               </div>
               <div className="inputWrapper borderbottom">
                 <label htmlFor="country">Country</label>
@@ -55,7 +62,7 @@ const FirstStep = () => {
                   required
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
-                ></input>
+                />
               </div>
               <div className="inputWrapper">
                 <label htmlFor="phone">Phone Number</label>
@@ -64,9 +71,9 @@ const FirstStep = () => {
                   id="phone"
                   placeholder="e.g. 01111111111"
                   required
-                  value={phone}
+                  value={Phone}
                   onChange={(e) => setPhone(e.target.value)}
-                ></input>
+                />
               </div>
               <div className="inputWrapper">
                 <label htmlFor="email">Email</label>
@@ -77,7 +84,7 @@ const FirstStep = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                ></input>
+                />
               </div>
               <div className="buttonsWrapper">
                 <button className="Back" onClick={BackHandler}>

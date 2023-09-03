@@ -21,6 +21,7 @@ function App() {
   const [address, setAddress] = useState("");
   const [Phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+
   const [LinkedIn, setLinked] = useState("");
   const [Protfolio, setPortfolio] = useState("");
   const [Degree, setDegree] = useState("");
@@ -46,23 +47,37 @@ function App() {
   const [Experince, setExperience] = useState([]);
   const [ExpArr, setExpArr] = useState([]);
   const [Exp, setiExp] = useState(0);
+
+
+  const [country, setCountry] = useState("");
+  const [targetJobTitle, setTargetJobTitle] = useState("");
+  const [company, setCompany] = useState("");
+  const [city, setCity] = useState("");
+  const [sendTo, setSendTo] = useState("");
+
+  const [industry, setIndustry] = useState("");
+  const [years, setYears] = useState( "");
+  const [skills, setSkills] = useState( ["", ""]);
+  const [qualities, setQualities] = useState( ["", ""]);
+
   return (
     <Router>
       <div className="App">
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Letter" element={<Letter />} />
-            <Route path="/CoverSelect" element={<CoverSelect />} />
-            <Route path="/FirstStep" element={<FirstStep />} />
-            <Route path="/SecondStep" element={<SecondStep />}></Route>
-            <Route path="/FinalStep" element={<FinalStep />}></Route>
+   
             <Route path="/CompleteLetter" element={<CompleteLetter />} />
           </Routes>
           <StateContext.Provider value={{
-            fullName, setName, address, setAddress, Phone, setPhone, email, setEmail, LinkedIn, setLinked, Protfolio, setPortfolio, Degree, setDegree, Institution, setInit,
-            Graduation, setDate, Projects, setProjects, projectArr, setArr, proj, setipro, Hobbies, setHob, HobArr, setHobArr, Hob, setiHob, Programming, setProg,
-            ProgArr, setProgArr, prog, setiprog, languages, setLang, LangArr, setLangArr, lan, setiLan, Experince, setExperience, ExpArr, setExpArr, Exp, setiExp
+            fullName, setName, address, setAddress, Phone, setPhone, email, setEmail,
+            LinkedIn, setLinked, Protfolio, setPortfolio, Degree, setDegree, Institution, setInit,
+            Graduation, setDate, Projects, setProjects, projectArr, setArr, proj, setipro, Hobbies,
+            setHob, HobArr, setHobArr, Hob, setiHob, Programming, setProg,
+            ProgArr, setProgArr, prog, setiprog, languages, setLang, LangArr, setLangArr, lan, setiLan,
+            Experince, setExperience, ExpArr, setExpArr, Exp, setiExp, country, setCountry, targetJobTitle, setTargetJobTitle,
+            company, setCompany, city, setCity, sendTo, setSendTo, industry, setIndustry, years, setYears, skills, setSkills,
+            qualities,setQualities
           }}>
             <Routes>
               <Route path="/Contact" element={<FirstPage />} />
@@ -70,6 +85,11 @@ function App() {
               <Route path="/Skills" element={<ThirdPage />}></Route>
               <Route path="/Experience" element={<FourthPage />}></Route>
               <Route path='/Resume' element={<ResumePage />}></Route>
+              <Route path="/Letter" element={<Letter />} />
+             <Route path="/CoverSelect" element={<CoverSelect />} />
+             <Route path="/FirstStep" element={<FirstStep />} />
+             <Route path="/SecondStep" element={<SecondStep />}></Route>
+             <Route path="/FinalStep" element={<FinalStep />}></Route>
             </Routes>
           </StateContext.Provider>
         </div>

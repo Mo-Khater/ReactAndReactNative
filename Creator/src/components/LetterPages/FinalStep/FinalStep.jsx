@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import { useContext } from "react";
 import "./CSS/third-page.scss";
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../../PageStructure/Header";
 import Footer from "../../PageStructure/Footer";
+import { StateContext } from "../../App";
 
-let data;
 
 const FinalStep = () => {
-  const [industry, setIndustry] = useState(data?.industry || "");
-  const [years, setYears] = useState(data?.years || "");
-  const [skills, setSkills] = useState(data?.skills || ["", ""]);
-  const [qualities, setQualities] = useState(data?.qualities || ["", ""]);
+  const {industry,setIndustry,years,setYears,skills,setSkills,qualities,setQualities} = useContext(StateContext);
+
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,24 +20,8 @@ const FinalStep = () => {
   };
 
   const NextHandler = () => {
-    data = {
-      ...location.state,
-      industry: industry,
-      years: years,
-      skills: skills,
-      qualities: qualities,
-    };
-    navigate("/Letter", {
-      state: {
-        ...location.state,
-        industry: industry,
-        years: years,
-        skills: skills,
-        qualities: qualities,
-      },
-    });
+    navigate("/Letter");
   };
-  console.log(location.state);
 
   const BackHandler = () => {
     navigate("/SecondStep");

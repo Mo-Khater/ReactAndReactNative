@@ -1,13 +1,13 @@
-import React, { useRef} from "react";
-import { useLocation} from 'react-router-dom';
+import React, { useRef,useContext} from "react";
 import ReactToPrint from 'react-to-print';
 import Header from '../PageStructure/Header';
 import Footer from "../PageStructure/Footer"
+import { StateContext } from '../../components/App';
 
 const Letter = () => {
-    const location = useLocation();
     const componentRef = useRef();
-    console.log(location.state);
+    const { fullName,targetJobTitle,email,Phone,country,company,sendTo,skills,qualities,industry,years,city} = useContext(StateContext);
+
     return (
         <>
             <Header />
@@ -20,36 +20,36 @@ const Letter = () => {
                     <div id="content">
                         <div class="head">
                             <hr/>
-                            <p class="centered">{location.state.name}</p>
-                            <p class="job-title">{location.state.targetJobTitle}</p>
+                            <p class="centered">{fullName}</p>
+                            <p class="job-title">{targetJobTitle}</p>
                             <ul class="contact-info">
-                                <li>{location.state.email}</li>
-                                <li>{location.state.phone}</li>
-                                <li>{location.state.country}</li>
+                                <li>{email}</li>
+                                <li>{Phone}</li>
+                                <li>{country}</li>
                             </ul>
                             <hr />
                             <hr class="line" />
                         </div>
-                        <p>{location.state.company}</p>
-                        <p>{location.state.city}</p>
-                        <p class="indent">Dear {location.state.sendTo},</p>
-                        <p class="indent">I am writing today to apply for the {location.state.targetJobTitle} position at
-                        {location.state.company}. I believe that my expertise in {location.state.skills[0]} and {location.state.skills[1]},
-                            combined with my experience in {location.state.industry}, make me a strong candidate for this role.</p>
-                        <p class="indent">As evidenced by my attached resume, I have {location.state.years} years of experience in the {location.state.industry}
+                        <p>{company}</p>
+                        <p>{city}</p>
+                        <p class="indent">Dear {sendTo},</p>
+                        <p class="indent">I am writing today to apply for the {targetJobTitle} position at
+                        {company}. I believe that my expertise in {skills[0]} and {skills[1]},
+                            combined with my experience in {industry}, make me a strong candidate for this role.</p>
+                        <p class="indent">As evidenced by my attached resume, I have {years} years of experience in the {industry}
                             field. Throughout my career, I have consistently achieved notable milestones and delivered positive
-                            outcomes. I am confident that I can bring similar success to {location.state.company}.</p>
-                        <p class="indent">I am recognized for my {location.state.qualities[0]} and {location.state.qualities[1]}, which are qualities
+                            outcomes. I am confident that I can bring similar success to {company}.</p>
+                        <p class="indent">I am recognized for my {qualities[0]} and {qualities[1]}, which are qualities
                             that align well with the values of your organization. I am eager to contribute my
-                            skills and expertise to the team at {location.state.company}.</p>
+                            skills and expertise to the team at {company}.</p>
                         <p class="indent">Thank you for considering my application.
                             I appreciate your time and am excited to discuss how I
-                            can contribute to the ongoing success of {location.state.company}
-                            Please feel free to contact me at {location.state.phone} or {location.state.email}.</p>
+                            can contribute to the ongoing success of {company}
+                            Please feel free to contact me at {Phone} or {email}.</p>
                         <p class="indent">Regards,</p>
-                        <p class="indent">{location.state.name}</p>
-                        <p class="indent">{location.state.phone}</p>
-                        <p class="indent">{location.state.email}</p>
+                        <p class="indent">{fullName}</p>
+                        <p class="indent">{Phone}</p>
+                        <p class="indent">{email}</p>
                     </div>
                 </div>
                 <div className="parent-container">

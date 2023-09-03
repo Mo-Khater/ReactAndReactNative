@@ -1,18 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import "./CSS/second-page.scss";
 import Navbar from "../../Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../../PageStructure/Header";
 import Footer from "../../PageStructure/Footer";
+import { StateContext } from "../../App";
 
-let data;
 
 const SecondStep = () => {
-  const [targetJobTitle, setTargetJobTitle] = useState(data?.targetJobTitle||"");
-  const [company, setCompany] = useState(data?.company||"");
-  const [city, setCity] = useState(data?.city||"");
-  const [sendTo, setSendTo] = useState(data?.sendTo||"");
+  const {targetJobTitle,setTargetJobTitle,company,setCompany,city,setCity,sendTo,setSendTo }= useContext(StateContext);
+
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,22 +21,7 @@ const SecondStep = () => {
   };
 
   const NextHandler = () => {
-    data = {
-      ...location.state,
-      targetJobTitle: targetJobTitle,
-      company: company,
-      city: city,
-      sendTo: sendTo,
-    };
-    navigate("/FinalStep", {
-      state: {
-        ...location.state,
-        targetJobTitle: targetJobTitle,
-        company: company,
-        city: city,
-        sendTo: sendTo,
-      },
-    });
+    navigate("/FinalStep")
   };
   console.log(location.state);
 
