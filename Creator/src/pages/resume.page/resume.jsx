@@ -66,19 +66,15 @@ const screen = {
 };
 
 const download = {
-    position: 'fixed',
-    bottom: 25,
-    right: 40,
+    position: 'relative',
+    left: "90%",
     backgroundColor: "orange",
     borderRadius: 15,
     padding: 10,
-    border: '0px solid white'
+    border: '0px solid white',
 };
 
 const goBack = {
-    position: 'fixed',
-    bottom: 25,
-    left: 40,
     backgroundColor: "white",
     color: "black",
     borderStyle: "solid",
