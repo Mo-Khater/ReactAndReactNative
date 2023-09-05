@@ -27,14 +27,14 @@ const Home = () => {
                 />
             <Section
                 id ={'portfolio'}
-                title={"Your Cover Letter"}
-                description={`My Perfect Cover Letter takes the hassle out of writing a cover letter.
+                title={"Your portofolio website"}
+                description={`My Perfect portofolio takes the hassle out of making a portofolio website.
             Easy prompts help you create the perfect
             job-worthy cover letter effortlessly!`}
                 img={'cover-letter-made-easy.avif'}
-                text={'Create my letter'}
-                alt={'cover letter'}
-                link={'coverletter'}
+                text={'Create my portofolio'}
+                alt={'portofolio'}
+                link={'portofolio'}
                 />     
             <Footer/>
         </div>

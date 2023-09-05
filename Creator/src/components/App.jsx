@@ -12,6 +12,8 @@ import SecondPage from "../pages/second.page/second-page";
 import ThirdPage from "../pages/third.page/third-page";
 import FourthPage from "../pages/fourth.page/fourth-page";
 import ResumePage from "../pages/resume.page/resume";
+import Container from "../portofolio/portofolio";
+import About from '../about/about'
 
 export const StateContext = createContext();
 
@@ -90,6 +92,10 @@ function App() {
              <Route path="/FirstStep" element={<FirstStep />} />
              <Route path="/SecondStep" element={<SecondStep />}></Route>
              <Route path="/FinalStep" element={<FinalStep />}></Route>
+            </Routes>
+            <Routes>
+              <Route path="/portofolio" element={<Container/>}/>
+              <Route path="/about" element={<About/>}/>
             </Routes>
           </StateContext.Provider>
         </div>
