@@ -38,7 +38,7 @@ function Portofoli({data}) {
       return activeButton === 'all' || element.type === activeButton;
     });
   return (
-    <body className='body'>
+    <body className='body' id='bodyweb'>
       <Headersection data={data}/>
     <Homesection data={data}/>
 <Aboutsection data={data}/>

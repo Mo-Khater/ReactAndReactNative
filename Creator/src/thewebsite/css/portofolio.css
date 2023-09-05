@@ -1,4 +1,4 @@
-*{
+.bodyweb *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,15 +19,15 @@
     align-items: center;
     z-index: 50;
 }
-ul{
+.bodyweb ul{
     list-style: none;
     font-size: 1rem;
 }
-li{
+.bodyweb li{
     display: inline-block ;
     margin: 0 25px;
 }
-a{
+.bodyweb a{
     text-decoration: none;
     color: white;
 }
@@ -437,7 +437,7 @@ box-shadow: none;
     color: white;
     font-size: 1.5rem;
 }
-.foott .icon a{
+.bodyweb .foott .icon a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -510,7 +510,7 @@ box-shadow: none;
 .oopproject img:hover{
     transform: scale(1.1);
 }
-.oopproject .layer{
+.bodyweb .oopproject .layer{
     position: absolute;
     top: 0;
     left: 0;
@@ -534,7 +534,7 @@ box-shadow: none;
 .processorimg{
     translate: 5px;
 }
-.oopproject:hover .layer{
+.bodyweb .oopproject:hover .layer{
     transform: translateY(0);
 }
 .layer a{
