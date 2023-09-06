@@ -1,0 +1,21 @@
+.boss{
+    display: flex;
+}
+.number{
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 50%;
+}
+.description{
+    color: green;
+    font-size: 18px;
+    margin-top: 15px;
+}
+.line{
+    background-color: white;
+    height: 2px;
+    order:3
+}
