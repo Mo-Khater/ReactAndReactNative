@@ -1,4 +1,3 @@
-
 import "./summary.css";
 import React from "react";
 

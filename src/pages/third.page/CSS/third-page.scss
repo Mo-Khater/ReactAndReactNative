@@ -1,5 +1,5 @@
-#fourthPage {
-  $imgpath: "../../../assets/information-4.jpg";
+#thirdPage {
+  $imgpath: "../../../assets/information-3.jpg";
   .Background {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -30,9 +30,6 @@
     border-style: solid;
     border-color: #e8f4f8;
     background-color: white;
-    .Wrapper{
-      min-height: 62%;
-    }
     p {
       font-size: 40px;
       font-weight: bold;
@@ -42,19 +39,15 @@
       min-height: 10vh;
       font-size: 20px;
       width: 95%;
-      font-size: 20px;
-      p{
-        font-family:sans-serif;
-        font-size: 15px;
-      }
       label {
         display: block;
       }
       input {
         border: 1px solid #cacaca;
-        margin-bottom: 10px;
+        margin: 10px 0;
         width: 98%;
         padding: 6px 10px;
+        font-size: 15px;
         &:focus {
           outline: none;
           border-style: solid;
@@ -83,7 +76,7 @@
       display: flex;
       width: 94%;
       justify-content: space-between;
-      margin-bottom: 3.5px;
+      
     }
     button {
       width: 100px;
@@ -103,60 +96,23 @@
       border-style: solid;
       border-color: #8f8e8e;
     }
-    .JobTitle{
-    
-     input{
-      max-width: 80%;
-     }
-    }
-    .JobDesc{
-
-      width : 40%; 
-      height: 100%;
-    
-      
-      TextArea{
-        border: 1px solid #cacaca;
-        width: 90%;
-       }
-    }
-    .From{
-      max-width: 12%;
-    }
-    .To{
-      width: 12%;
-      
-    }
     .Projects{
-     
-
       button{
         background-color: #102c57;
         color: white;
         width: 25px;
         height: 25px;
         border-radius: 5px ;
-
-        margin:22px 10px 10px 0px;
-
-        border-radius: 5px ;
+        margin:14px 10px 10px 30px;
         font-size: 15px;
       }
       display: flex;
-      justify-content: flex-start;
-
-      align-items: center;
-
-      flex-flow: row nowrap;
      
     }
     .projectWrapper {
       display: flex;
       flex-flow: row wrap;
       min-width: 50vw;
-
-      margin: 20px;
-
     }
 
     .Probutton {
@@ -165,8 +121,7 @@
       background-color: #102c57;
     }
     .hidden{
-      display: none;
-    } 
+      display: none ;
+    }
   }
-  
 }

@@ -110,7 +110,6 @@
      }
     }
     .JobDesc{
-
       width : 40%; 
       height: 100%;
     
@@ -129,24 +128,19 @@
     }
     .Projects{
      
-
       button{
         background-color: #102c57;
         color: white;
         width: 25px;
         height: 25px;
         border-radius: 5px ;
-
         margin:22px 10px 10px 0px;
-
         border-radius: 5px ;
         font-size: 15px;
       }
       display: flex;
       justify-content: flex-start;
-
       align-items: center;
-
       flex-flow: row nowrap;
      
     }
@@ -154,9 +148,7 @@
       display: flex;
       flex-flow: row wrap;
       min-width: 50vw;
-
       margin: 20px;
-
     }
 
     .Probutton {

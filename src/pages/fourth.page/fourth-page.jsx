@@ -166,11 +166,9 @@ const FourthPage = () => {
                 <button className="Next" type="submit" onClick={NextHandler}>
                   Next
                 </button>
-
              
                   
               
-
               </div>
             </div>
             <div className="BackgroundImg"></div>
