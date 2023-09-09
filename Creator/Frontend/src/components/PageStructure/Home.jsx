@@ -2,6 +2,7 @@ import Section from "./Section";
 import Header from "./Header";
 import Footer from "./Footer";
 const Home = () => {
+    const token = localStorage.getItem('token');
     return (
         <div className="home">
             <Header />
@@ -34,7 +35,7 @@ const Home = () => {
                 img={'cover-letter-made-easy.avif'}
                 text={'Create my portofolio'}
                 alt={'portofolio'}
-                link={'portofolio'}
+                link={token?'portofolio':'login'}
                 />     
             <Footer/>
         </div>

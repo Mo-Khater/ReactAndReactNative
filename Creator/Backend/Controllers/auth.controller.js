@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
-
+import { signUpSchema,User,logInSchema } from "../models/users.js";
 const authController = {
   signup: async (req, res) => {
     // Validate the request body against the sign up schema

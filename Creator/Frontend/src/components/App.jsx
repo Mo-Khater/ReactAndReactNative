@@ -15,6 +15,8 @@ import ResumePage from "../pages/resume.page/resume";
 import Container from "../portofolio/portofolio";
 import History from "../pages/history.page/history-page";
 import About from '../about/about'
+import Login from "../registration/login";
+import Register from "../registration/register";
 
 export const StateContext = createContext();
 
@@ -98,6 +100,10 @@ function App() {
               <Route path="/portofolio" element={<Container />} />
               <Route path="/about" element={<About />} />
               <Route path="/me" element={<History />} />
+            </Routes>
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </StateContext.Provider>
         </div>
