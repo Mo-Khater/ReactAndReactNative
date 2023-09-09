@@ -5,24 +5,24 @@ import React from 'react';
 function Contact({ contactInfo }) {
 
     return (
-        <div>
+        <div className='info'>
             <h3>Contact</h3>
             <hr />
             <ul>
                 <li>
-                    <h5>Phone</h5><span>{contactInfo?.Phone}</span>
+                    <h4>Phone</h4><span>{contactInfo?.Phone}</span>
                 </li>
                 <li>
-                    <h5>Email</h5><span>{contactInfo?.email}</span>
+                    <h4>Email</h4><span>{contactInfo?.email}</span>
                 </li>
                 <li>
-                    <h5>Address</h5><span>{contactInfo?.address}</span>
+                    <h4>Address</h4><span>{contactInfo?.address}</span>
                 </li>
                 <li>
-                    <h5>LinkedIn</h5><span>{contactInfo?.LinkedIn}</span>
+                    <h4>LinkedIn</h4><span>{contactInfo?.LinkedIn}</span>
                 </li>
                 <li>
-                    <h5>Portfolio</h5><span>{contactInfo?.Protfolio}</span>
+                    <h4>Portfolio</h4><span>{contactInfo?.Protfolio}</span>
                 </li>
             </ul>
         </div>
@@ -31,18 +31,18 @@ function Contact({ contactInfo }) {
 
 function Education({ educationInfo }) {
     return (
-        <div>
+        <div className='info'>
             <h3>Education</h3>
             <hr />
             <ul>
                 <li>
-                    <h5>Degree</h5><span>{educationInfo.Degree}</span>
+                    <h4>Degree</h4><span>{educationInfo.Degree}</span>
                 </li>
                 <li>
-                    <h5>Institution</h5><span>{educationInfo.Institution}</span>
+                    <h4>Institution</h4><span>{educationInfo.Institution}</span>
                 </li>
                 <li>
-                    <h5>Graduate</h5><span>{educationInfo.Graduation}</span>
+                    <h4>Graduate</h4><span>{educationInfo.Graduation}</span>
                 </li>
 
             </ul>
@@ -53,7 +53,7 @@ function Education({ educationInfo }) {
 
 function Skills({ skillsInfo }) {
     return (
-        <div>
+        <div className='info'>
             <h3>Skills</h3>
             <hr />
             <ul className='normal'>

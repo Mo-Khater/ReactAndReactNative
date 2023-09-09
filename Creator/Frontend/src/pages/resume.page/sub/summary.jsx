@@ -1,11 +1,10 @@
-
 import "./summary.css";
 import React from "react";
 
 function Summary({ summaryInfo }) {
   return (
     <div id="summary">
-      <h2>{summaryInfo.fullName}</h2>
+      <h1>{summaryInfo.fullName}</h1>
       <div className="kapran">
         <h3>Experience: </h3>
 
@@ -58,7 +57,7 @@ function Summary({ summaryInfo }) {
 
 function Language({ langsInfo }) {
   return (
-    <div>
+    <div id='summary'>
       <h3>Languages:</h3>
       <ul className="list">
         {langsInfo?.map((val) => {
@@ -75,7 +74,7 @@ function Language({ langsInfo }) {
 
 function Hobbs({ hobbsInfo }) {
   return (
-    <div>
+    <div id='summary'>
       <h3>Hobbies:</h3>
       <ul className="list">
         {hobbsInfo?.map((val) => {
