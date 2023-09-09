@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import ResumeData from "./models/resume.js";
 import cors from 'cors'; 
-
+import authController from'./Controllers/auth.controller.js';
 dotenv.config();
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors()); // enable server to recieve the request from another port
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.DB_URL)
+mongoose.connect(process.env.URL)
   .then(() => {
     console.log('Database connected');
   }).catch((error) => {
@@ -35,6 +35,8 @@ app.post('/resume/save', (req, res) => {
       res.status(500).send('Error saving data: ' + error);
     });
 });
+app.post('/register',authController.signup);
+app.post('/login',authController.login);
 
 app.get('/resume/history', async (req, res) => {
 
