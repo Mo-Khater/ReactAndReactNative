@@ -9,17 +9,33 @@ import React from 'react';
 import { StateContext } from '../../components/App';
 import Header from '../../components/PageStructure/Header';
 import Footer from '../../components/PageStructure/Footer';
-
+import axios from 'axios';
 
 
 export default function ResumePage() {
-    const { fullName, address, Phone, email, LinkedIn, Protfolio, Degree, Institution, Graduation, Projects, Hobbies, Programming, languages, Experince } = useContext(StateContext);
     const navigate = useNavigate();
     const back = () => {
         navigate('/Experience');
     }
     const pageRef = useRef();
-    console.log(fullName, address, Phone, email, LinkedIn, Protfolio, Degree, Institution, Graduation, Projects, Hobbies, Programming, languages, Experince);
+    const { fullName, address, Phone, email, LinkedIn, Protfolio,
+        Degree, Institution, Graduation, Projects, Hobbies,
+        Programming, languages, Experince } = useContext(StateContext);
+    const save = async () => {
+        const dataToSave = {
+            fullName, address, Phone, email, LinkedIn, Protfolio,
+            Degree, Institution, Graduation, Projects, Hobbies,
+            Programming, languages, Experince
+        };
+        console.log("save");
+        await axios.post('http://localhost:3001/resume/save', dataToSave)
+            .then(response => {
+                console.log('Data saved successfully!');
+            })
+            .catch(error => {
+                console.error('Error saving data:', error);
+            });
+    };
     return (
         <>
             <Header />
@@ -30,32 +46,49 @@ export default function ResumePage() {
                     marginLeft: '25%',
                     top: 50,
                 }}>
-                    <section style={screen} ref={pageRef}>
-                        <aside style={{ backgroundColor: "#323B4C", minHeight: 700, color: "white" }} >
-                            <div style={{ marginLeft: 15, paddingTop: 40 }} >
-                                <Contact contactInfo={{ address, email, Phone, LinkedIn, Protfolio }} />
-                                <Education educationInfo={{ Institution, Degree, Graduation }} />
-                                <Skills skillsInfo={Programming} />
-                            </div>
-                        </aside>
-                        <section style={{ marginLeft: 15 }} >
-                            <Summary summaryInfo={{ fullName, Experince, Projects }} />
-                            <Language langsInfo={languages} />
-                            <Hobbs hobbsInfo={Hobbies} />
-                        </section>
-                    </section>
+                    <div ref={pageRef}>
+                        <ResumeTemplate data={{
+                            fullName, address, Phone, email, LinkedIn, Protfolio,
+                            Degree, Institution, Graduation, Projects, Hobbies,
+                            Programming, languages, Experince
+                        }} />
+                    </div>
                 </div>
                 <ReactToPrint
                     trigger={() => <button style={download}>Convert to PDF</button>}
                     content={() => pageRef.current}
                 />
                 <button style={goBack} onClick={back}>Back</button>
+                <button style={{ ...download, left: '80%', top: '50px' }} onClick={save}>Save</button>
             </div>
             <Footer />
         </>
     );
 }
 
+
+
+export function ResumeTemplate({ data: { fullName, address, Phone, email, LinkedIn, Protfolio,
+    Degree, Institution, Graduation, Projects, Hobbies,
+    Programming, languages, Experince } }) {
+
+    return (
+        <section style={screen}>
+            <aside style={{ backgroundColor: "#323B4C", minHeight: 700, color: "white" }} >
+                <div style={{ marginLeft: 15, paddingTop: 40 }} >
+                    <Contact contactInfo={{ address, email, Phone, LinkedIn, Protfolio }} />
+                    <Education educationInfo={{ Institution, Degree, Graduation }} />
+                    <Skills skillsInfo={Programming} />
+                </div>
+            </aside>
+            <section style={{ marginLeft: 15 }} >
+                <Summary summaryInfo={{ fullName, Experince, Projects }} />
+                <Language langsInfo={languages} />
+                <Hobbs hobbsInfo={Hobbies} />
+            </section>
+        </section>
+    );
+}
 
 const screen = {
     backgroundColor: '#EBECF0',
@@ -85,3 +118,4 @@ const goBack = {
     borderRadius: '2px',
     borderWidth: '2px'
 };
+

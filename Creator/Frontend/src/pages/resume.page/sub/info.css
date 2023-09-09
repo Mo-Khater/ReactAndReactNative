@@ -1,38 +1,41 @@
-h4 {
+.info h4 {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 10%;
+    /* padding-top: 10%; */
+    font-size: larger;
 
 }
-h3{
+
+.info h3 {
     font-size: x-large;
 }
-span{
-    word-wrap:break-word;
+
+.info span {
+    word-wrap: break-word;
     /* font-size: larger; */
 }
 
-ul {
+.info ul {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
 }
 
-li {
+.info li {
     margin-bottom: 10px;
     font-weight: lighter;
     /* font-size: smaller; */
 }
 
-li>h6 {
+.info li>h6 {
     margin: 0;
 }
 
-li>span {
-    /* font-size: smaller; */
+.info span {
+    color: white;
 }
 
-ul.normal{
+.info ul.normal {
     list-style-type: disc;
     margin: 0;
     padding-left: 15px;

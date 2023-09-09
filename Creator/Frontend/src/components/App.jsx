@@ -13,6 +13,7 @@ import ThirdPage from "../pages/third.page/third-page";
 import FourthPage from "../pages/fourth.page/fourth-page";
 import ResumePage from "../pages/resume.page/resume";
 import Container from "../portofolio/portofolio";
+import History from "../pages/history.page/history-page";
 import About from '../about/about'
 
 export const StateContext = createContext();
@@ -58,9 +59,9 @@ function App() {
   const [sendTo, setSendTo] = useState("");
 
   const [industry, setIndustry] = useState("");
-  const [years, setYears] = useState( "");
-  const [skills, setSkills] = useState( ["", ""]);
-  const [qualities, setQualities] = useState( ["", ""]);
+  const [years, setYears] = useState("");
+  const [skills, setSkills] = useState(["", ""]);
+  const [qualities, setQualities] = useState(["", ""]);
 
   return (
     <Router>
@@ -68,7 +69,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-   
+
             <Route path="/CompleteLetter" element={<CompleteLetter />} />
           </Routes>
           <StateContext.Provider value={{
@@ -79,7 +80,7 @@ function App() {
             ProgArr, setProgArr, prog, setiprog, languages, setLang, LangArr, setLangArr, lan, setiLan,
             Experince, setExperience, ExpArr, setExpArr, Exp, setiExp, country, setCountry, targetJobTitle, setTargetJobTitle,
             company, setCompany, city, setCity, sendTo, setSendTo, industry, setIndustry, years, setYears, skills, setSkills,
-            qualities,setQualities
+            qualities, setQualities
           }}>
             <Routes>
               <Route path="/Contact" element={<FirstPage />} />
@@ -88,14 +89,15 @@ function App() {
               <Route path="/Experience" element={<FourthPage />}></Route>
               <Route path='/Resume' element={<ResumePage />}></Route>
               <Route path="/Letter" element={<Letter />} />
-             <Route path="/CoverSelect" element={<CoverSelect />} />
-             <Route path="/FirstStep" element={<FirstStep />} />
-             <Route path="/SecondStep" element={<SecondStep />}></Route>
-             <Route path="/FinalStep" element={<FinalStep />}></Route>
+              <Route path="/CoverSelect" element={<CoverSelect />} />
+              <Route path="/FirstStep" element={<FirstStep />} />
+              <Route path="/SecondStep" element={<SecondStep />}></Route>
+              <Route path="/FinalStep" element={<FinalStep />}></Route>
             </Routes>
             <Routes>
-              <Route path="/portofolio" element={<Container/>}/>
-              <Route path="/about" element={<About/>}/>
+              <Route path="/portofolio" element={<Container />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/me" element={<History />} />
             </Routes>
           </StateContext.Provider>
         </div>
