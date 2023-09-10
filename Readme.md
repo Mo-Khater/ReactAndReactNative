@@ -33,11 +33,11 @@ then enter some data
 
 - **personal info** 
 
-<img src="imgs/Screenshot%202023-09-10%20214316.png" width="1000" height="400"> 
+<img src="imgs/Screenshot%202023-09-10%20214316.png" width="1200" height="400"> 
 
 - **social links** 
 
-<img src="imgs/Screenshot%202023-09-10%20214413.png" width="1000" height="400"> 
+<img src="imgs/Screenshot%202023-09-10%20214413.png" width="1200" height="400"> 
 
 - **number of projects** 
 
@@ -45,7 +45,7 @@ then enter some data
 
 - **info about projects** 
 
-<img src="imgs/Screenshot%202023-09-10%20214503.pngg" width="1000" height="400"> 
+<img src="imgs/Screenshot%202023-09-10%20214503.png" width="1200" height="400"> 
 
 **Easy GIU try it!**
 
