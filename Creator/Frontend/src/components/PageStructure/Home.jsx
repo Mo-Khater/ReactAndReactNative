@@ -1,6 +1,7 @@
 import Section from "./Section";
 import Header from "./Header";
 import Footer from "./Footer";
+import IsTokenExpired from "../../registration/token";
 const Home = () => {
     const token = localStorage.getItem('token');
     return (

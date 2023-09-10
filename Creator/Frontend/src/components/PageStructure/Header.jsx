@@ -16,7 +16,7 @@ const Header = () => {
                     <li><Link className="a" to='/'>HOME</Link></li>
                     <li><Link className="a" to='/about'>ABOUT</Link></li>
                     <li><Link className='a' to='/me'>ME</Link></li>
-                    <li><Link className='a' to='/register'>register</Link></li>
+                    {!token?<li><Link className='a' to='/register'>register</Link></li>:<li className="hide"></li>}
                     {!token?<li><Link className='a' to='/login'>login</Link></li>:<li className="hide"></li>}
                     {token?<li><Link onClick={signout} className="a" to='/login'>signout</Link></li>:<li className="hide"></li>}
                     
