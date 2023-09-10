@@ -19,9 +19,9 @@ Our services are free, first you should create an email then sign in our website
 ## Portfolio
 you can build a website having your personal data.
 
-![a photo for portofolio service](imgs/portofolio.png)
+<img src="imgs/portofolio.png" width="200" height="100">
 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214628.png)
+<img src="imgs/Screenshot%202023-09-10%20214628.png" width="200" height="100">
 
 ![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214612.png)
 
