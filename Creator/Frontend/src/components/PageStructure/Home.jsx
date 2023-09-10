@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import IsTokenExpired from "../../registration/token";
 const Home = () => {
     const token = localStorage.getItem('token');
+    console.log(IsTokenExpired());
     return (
         <div className="home">
             <Header />
@@ -36,7 +37,7 @@ const Home = () => {
                 img={'cover-letter-made-easy.avif'}
                 text={'Create my portofolio'}
                 alt={'portofolio'}
-                link={token?'portofolio':'login'}
+                link={!IsTokenExpired()?'portofolio':'login'}
                 />     
             <Footer/>
         </div>

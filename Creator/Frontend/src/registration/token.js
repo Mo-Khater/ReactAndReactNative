@@ -1,9 +1,5 @@
+import jwtDecode from 'jwt-decode';
 function IsTokenExpired() {
-    function decodeJwt(token) {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace('-', '+').replace('_', '/');
-        return JSON.parse(atob(base64));
-      }
     const token = localStorage.getItem('token');
     if (!token) {
       // Token is not present
@@ -11,8 +7,10 @@ function IsTokenExpired() {
     }
   
     try {
-      const decodedToken = decodeJwt(token);
+      const decodedToken = jwtDecode(token);
       const currentTime = Date.now() / 1000; // Convert to seconds
+      console.log(decodedToken.exp);
+      console.log(currentTime);
       if(decodedToken.exp < currentTime)
       {
         localStorage.removeItem('token');
