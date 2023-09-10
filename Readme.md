@@ -21,30 +21,31 @@ you can build a website having your personal data.
 
 <img src="imgs/portofolio.png" width="1000" height="400">
 
-<img src="imgs/Screenshot%202023-09-10%20214628.png" width="200" height="100">
+<img src="imgs/Screenshot%202023-09-10%20214628.png" width="1000" height="400">
 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214612.png)
+<img src="imgs/Screenshot%202023-09-10%20214612.png" width="1000" height="400">
 
-First Click Create my portofolio 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214257.png)
+First Click Create my portofolio
+
+<img src="imgs/Screenshot%202023-09-10%20214257.png" width="1000" height="400"> 
 
 then enter some data
 
 - **personal info** 
 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214316.png)
+<img src="imgs/Screenshot%202023-09-10%20214316.png" width="1000" height="400"> 
 
 - **social links** 
 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214413.png)
+<img src="imgs/Screenshot%202023-09-10%20214413.png" width="1000" height="400"> 
 
 - **number of projects** 
 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214450.png)
+<img src="imgs/Screenshot%202023-09-10%20214450.png" width="1000" height="400"> 
 
 - **info about projects** 
 
-![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214503.png)
+<img src="imgs/Screenshot%202023-09-10%20214503.pngg" width="1000" height="400"> 
 
 **Easy GIU try it!**
 
