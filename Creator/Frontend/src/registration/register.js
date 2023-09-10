@@ -34,54 +34,62 @@ function Register() {
       error?seterror(error):seterror(message);
       });
   };
-  return (
-    <> <header className="hh">
-    <a href="/" className="Brand">CREATOR</a>
-    {/* <i class='bx bx-menu' id="menuicon"></i> */}
-    <nav className="navbar">
-        <ul>
-        <li><Link className="a" to='/'>HOME</Link></li>
-                    <li><Link className="a" to='/about'>ABOUT</Link></li>
-        </ul>
-    </nav>
-    </header> 
-    <form method="post" onSubmit={handlesubmit} className='form'>
-    <div className="container">
-        <div className="box">
-      <input
+      return (
+        <body className="forloggin">
+   <div class="login-box">
+        <div class="login-header">
+            <header>Login</header>
+        </div>
+        <div class="input-box">
+        <input
         type="text"
         name="fullname"
+        className="input-field"
         id="fullname"
         placeholder="Fullname:"
         onChange={handleinput}
       ></input>
-      </div>
-        <div className="box">
-      <input
+        </div>
+        <div class="input-box">
+        <input
         type="email"
         name="email"
         id="email"
+        className="input-field"
         placeholder="Email:"
         onChange={handleinput}
       ></input>
-      </div>
-      <div className="box">
-      <input
+        </div>
+        <div className="input-box">
+        <input
         type="password"
         name="password"
         id="password"
+        className="input-field"
         placeholder="password:"
         onChange={handleinput}
       ></input>
-      </div>
-      <p className="msg">{error}</p>
-      <button type="submit">register</button>
-      <div className="reglink">
-      <Link to="/login" className="link">login</Link>
-      </div>
-      </div>
-    </form>
-    </>
+        </div>
+        <div class="forgot">
+            <section>
+              <input type="checkbox" id="check"></input>
+                <label for="check">Remember me</label>
+            </section>
+            <section>
+                <a href="#">Forgot password</a>
+            </section>
+        </div>
+        <p className="msg">{error}</p>
+        <div class="input-submit">
+        <button type="submit" class="submit-btn" id="submit" onClick={handlesubmit}></button>
+            <label for="submit">Sign up</label>
+        </div>
+        
+        <div class="sign-up-link">
+            <p>Have account?<Link to="/login" className="link">Sign in</Link></p>
+        </div>
+    </div>
+    </body>
   );
 }
 

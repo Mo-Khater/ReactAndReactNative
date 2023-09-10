@@ -5,7 +5,6 @@ const Header = () => {
     const Navigate = useNavigate();
     const signout=()=>{
         localStorage.removeItem('token');
-        Navigate("/login");
     }
     return (
         <header id= "header" className="header">
@@ -19,7 +18,8 @@ const Header = () => {
                     <li><Link className='a' to='/me'>ME</Link></li>
                     <li><Link className='a' to='/register'>register</Link></li>
                     {!token?<li><Link className='a' to='/login'>login</Link></li>:<li className="hide"></li>}
-                    <li><button onClick={signout} className="signout">signout</button></li>
+                    {token?<li><Link onClick={signout} className="a" to='/login'>signout</Link></li>:<li className="hide"></li>}
+                    
                 </ul>
                 
             </div>
