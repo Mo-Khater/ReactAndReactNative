@@ -2,9 +2,9 @@
 ## what services you can have?
 - **PDF Resume**
 - **Cover Letter**
-- **website portofolio**
+- **Portfolio**
 ## what you should do to have our services
-out services are free, first you should create an email then sign in our website 
+Our services are free, first you should create an email then sign in our website 
 ## what pages the website consists of?
 - About
 - Home
