@@ -28,7 +28,7 @@ you can build a website having your personal data.
 First Click Create my portofolio 
 ![a photo for portofolio service](imgs/Screenshot%202023-09-10%20214257.png)
 
-**then enter some data**
+then enter some data
 
 - **personal info** 
 
