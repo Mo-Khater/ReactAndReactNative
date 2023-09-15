@@ -77,10 +77,6 @@ const Info=({increaseindex})=>{
         <div className="form">
         <div className="container">
         <form> 
-         <div className="box">
-         <input value={nickname}  onChange={editnickname} placeholder={data[0].Element1}   required></input>
-          <AiOutlineUser className="iii"/>
-         </div>
           <div className="box">
           <input value={fullname} onChange={editfullname} placeholder={data[0].Element2}></input>
           <AiOutlineUser className="iii"/>

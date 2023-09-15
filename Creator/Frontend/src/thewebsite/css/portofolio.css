@@ -429,7 +429,8 @@ background-color: #0ef;
 color: #1f242b;
 box-shadow: none;
 }
-.foott{
+#bodyweb .foott{
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -453,7 +454,7 @@ box-shadow: none;
     border-radius: 10px;
     transition: .5s;
 }
-.foott .icon a:hover{
+#bodyweb .foott .icon a:hover{
     background-color:#0ef ;
     color:#1f242b;
     box-shadow: 0 0 1rem #0ef;
@@ -528,7 +529,7 @@ box-shadow: none;
     transform: translateY(100%);
     transition: .5s ease;
 }
-#bodyweb .hide{
+ .hide{
     display: none;
 }
 #bodyweb .oopimg{
