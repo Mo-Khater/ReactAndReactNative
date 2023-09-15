@@ -1,4 +1,4 @@
-.bodyweb *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,22 +19,22 @@
     align-items: center;
     z-index: 50;
 }
-.bodyweb ul{
+.hh ul{
     list-style: none;
     font-size: 1rem;
 }
-.bodyweb li{
+.hh li{
     display: inline-block ;
     margin: 0 25px;
 }
-.bodyweb a{
+.hh a{
     text-decoration: none;
     color: white;
 }
-header a.active{
+.hh a.active{
     color: #0ef;
 }
-header a:hover{
+.hh a:hover{
     color:#0ef ;
 }
 #menuicon{
@@ -123,6 +123,9 @@ span{
 }
 .aboutme h5{
     font-size: 25px;
+}
+.home a{
+    text-decoration: none;
 }
 .aboutme h1{
     font-size: 4rem;
@@ -245,22 +248,22 @@ margin-top: 20px;
     color:#1f242b ;
     box-shadow: 0 0 1rem #0ef;
 }
-#protfoilo{
+#bodyweb #protfoilo{
     text-align: center;
     background-color: #242a31 ;
     padding: 100px 50px;
     margin: auto;
     color: white;
 }
-#protfoilo h4{
+#bodyweb #protfoilo h4{
     font-size: 2rem;
 }
-#protfoilo h1{
+#bodyweb #protfoilo h1{
     font-size: 5rem;
     color: white;
     margin: 10px;
 }
-.project button{
+#bodyweb .project button{
     width: 100px;
     height: 30px;
     margin: 0 20px;
@@ -270,7 +273,7 @@ margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
 }
-.project .active{
+#bodyweb .project .active{
     background-color: #0ef;
 }
 #cosec{
@@ -432,12 +435,12 @@ box-shadow: none;
     align-items: center;
     background-color: #1f242f;
 }
-.foott .contentfooter{
+#bodyweb .foott .contentfooter{
     padding: 20px;
     color: white;
     font-size: 1.5rem;
 }
-.bodyweb .foott .icon a{
+#bodyweb .foott .icon a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -455,7 +458,7 @@ box-shadow: none;
     color:#1f242b;
     box-shadow: 0 0 1rem #0ef;
 }
-@keyframes float {
+ @keyframes float {
     0%{
         transform: translateY(0);
     }
@@ -466,11 +469,11 @@ box-shadow: none;
         transform: translateY(0);
     }
 }
-.imgproject{
+#bodyweb .imgproject{
     width: 500px;
     height: 500px;
 }
-.projectscontainer{
+#bodyweb .projectscontainer{
     padding: 50px;
     width: 64%;
     display: grid;
@@ -481,14 +484,14 @@ box-shadow: none;
     height: 600px;
     align-items: center;
 }
-.pt{
+#bodyweb .pt{
     translate: 0 -127px;
 }
-.sss{
+#bodyweb .sss{
     translate: 0 -80px;
 
 }
-.oopproject{
+#bodyweb .oopproject{
     position: relative;
     border-radius: 1.5rem;
     box-shadow: 0 0 15px #0ef;
@@ -497,20 +500,20 @@ box-shadow: none;
     width: 100%;
     height: 100%;
 }
-#protfoilo h4{
+#bodyweb #protfoilo h4{
     font-size: 40px;
 }
-#protfoilo p{
+#bodyweb #protfoilo p{
     font-size: 12px;
 }
-.oopproject img{
+#bodyweb .oopproject img{
     width: 100%;
     transition: .5s ease;
 }
-.oopproject img:hover{
+#bodyweb .oopproject img:hover{
     transform: scale(1.1);
 }
-.bodyweb .oopproject .layer{
+#bodyweb .oopproject .layer{
     position: absolute;
     top: 0;
     left: 0;
@@ -525,19 +528,19 @@ box-shadow: none;
     transform: translateY(100%);
     transition: .5s ease;
 }
-.hide{
+#bodyweb .hide{
     display: none;
 }
-.oopimg{
+#bodyweb .oopimg{
     translate: 0 -100px;
 }
-.processorimg{
+#bodyweb .processorimg{
     translate: 5px;
 }
-.bodyweb .oopproject:hover .layer{
+#bodyweb .oopproject:hover .layer{
     transform: translateY(0);
 }
-.layer a{
+#bodyweb .layer a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -548,6 +551,6 @@ box-shadow: none;
     color: #0ef;
     border-radius: 50%;
 }
-.layer a .bx-link-external{
+#bodyweb .layer a .bx-link-external{
     color: #1f242b;
 }
