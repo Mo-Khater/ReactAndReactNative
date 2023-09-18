@@ -1,0 +1,155 @@
+#fourthPage .Background {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+@media (max-width: 1200px) {
+  #fourthPage .Background {
+    display: flex;
+  }
+}
+#fourthPage .Background .BackgroundImg {
+  height: 89.2vh;
+  width: 40vw;
+  background: url("../../../assets/information-4.jpg");
+  background-size: 40vw;
+}
+@media (max-width: 1200px) {
+  #fourthPage .Background .BackgroundImg {
+    display: none;
+  }
+}
+#fourthPage .mainWrapper {
+  margin-left: 50px;
+  margin-top: 20px;
+  display: flex;
+  width: 50vw;
+  height: 80vh;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-left: 50px;
+  padding-right: 20px;
+  border-style: solid;
+  border-color: #e8f4f8;
+  background-color: white;
+}
+#fourthPage .mainWrapper .Wrapper {
+  min-height: 62%;
+}
+#fourthPage .mainWrapper p {
+  font-size: 40px;
+  font-weight: bold;
+}
+#fourthPage .mainWrapper .inputWrapper {
+  min-width: 30vw;
+  min-height: 10vh;
+  font-size: 20px;
+  width: 95%;
+  font-size: 20px;
+}
+#fourthPage .mainWrapper .inputWrapper p {
+  font-family: sans-serif;
+  font-size: 15px;
+}
+#fourthPage .mainWrapper .inputWrapper label {
+  display: block;
+}
+#fourthPage .mainWrapper .inputWrapper input {
+  border: 1px solid #cacaca;
+  margin-bottom: 10px;
+  width: 98%;
+  padding: 6px 10px;
+}
+#fourthPage .mainWrapper .inputWrapper input:focus {
+  outline: none;
+  border-style: solid;
+  border-color: rgb(114, 114, 192);
+  border-width: 1px;
+}
+#fourthPage .mainWrapper .borderbottom {
+  border-bottom: 1px solid #ccc;
+}
+#fourthPage .mainWrapper .linksWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 20vh;
+  width: 100%;
+}
+#fourthPage .mainWrapper .linksWrapper .inputWrapper {
+  min-width: 20px;
+}
+#fourthPage .mainWrapper .linksWrapper input {
+  width: 85%;
+}
+#fourthPage .mainWrapper .buttonsWrapper {
+  display: flex;
+  width: 94%;
+  justify-content: space-between;
+  margin-bottom: 3.5px;
+}
+#fourthPage .mainWrapper button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 20px;
+  border-radius: 2px;
+  border-width: 2px;
+}
+#fourthPage .mainWrapper .Next {
+  background-color: #102c57;
+  color: white;
+}
+#fourthPage .mainWrapper .Back {
+  background-color: white;
+  color: black;
+  border-style: solid;
+  border-color: #8f8e8e;
+}
+#fourthPage .mainWrapper .JobTitle input {
+  max-width: 80%;
+}
+#fourthPage .mainWrapper .JobDesc {
+  width: 40%;
+  height: 100%;
+}
+#fourthPage .mainWrapper .JobDesc TextArea {
+  border: 1px solid #cacaca;
+  width: 90%;
+}
+#fourthPage .mainWrapper .From {
+  max-width: 12%;
+}
+#fourthPage .mainWrapper .To {
+  width: 12%;
+}
+#fourthPage .mainWrapper .Projects {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+#fourthPage .mainWrapper .Projects button {
+  background-color: #102c57;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 22px 10px 10px 0px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+#fourthPage .mainWrapper .projectWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 50vw;
+  margin: 20px;
+}
+#fourthPage .mainWrapper .Probutton {
+  color: white;
+  width: 250px;
+  background-color: #102c57;
+}
+#fourthPage .mainWrapper .hidden {
+  display: none;
+}/*# sourceMappingURL=fourth-page.css.map */
