@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, createContext } from 'react';
+import { useState, createContext } from "react";
 import Home from "./PageStructure/Home";
 import FirstStep from "./LetterPages/FirstStep/FirstStep";
 import SecondStep from "./LetterPages/SecondStep/SecondStep";
@@ -14,45 +14,30 @@ import FourthPage from "../pages/fourth.page/fourth-page";
 import ResumePage from "../pages/resume.page/resume";
 import Container from "../portofolio/portofolio";
 import History from "../pages/history.page/history-page";
-import About from '../about/about'
+import About from "../about/about";
 import Login from "../registration/login";
 import Register from "../registration/register";
 
 export const StateContext = createContext();
-
 
 function App() {
   const [fullName, setName] = useState("");
   const [address, setAddress] = useState("");
   const [Phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-
   const [LinkedIn, setLinked] = useState("");
   const [Protfolio, setPortfolio] = useState("");
+
   const [Degree, setDegree] = useState("");
   const [Institution, setInit] = useState("");
   const [Graduation, setDate] = useState("");
-
   const [Projects, setProjects] = useState([]);
-  const [projectArr, setArr] = useState([]);
-  const [proj, setipro] = useState(0);
 
   const [Hobbies, setHob] = useState([]);
-  const [HobArr, setHobArr] = useState([]);
-  const [Hob, setiHob] = useState(0);
-
   const [Programming, setProg] = useState([]);
-  const [ProgArr, setProgArr] = useState([]);
-  const [prog, setiprog] = useState(0);
-
   const [languages, setLang] = useState([]);
-  const [LangArr, setLangArr] = useState([]);
-  const [lan, setiLan] = useState(0);
 
   const [Experince, setExperience] = useState([]);
-  const [ExpArr, setExpArr] = useState([]);
-  const [Exp, setiExp] = useState(0);
-
 
   const [country, setCountry] = useState("");
   const [targetJobTitle, setTargetJobTitle] = useState("");
@@ -74,22 +59,62 @@ function App() {
 
             <Route path="/CompleteLetter" element={<CompleteLetter />} />
           </Routes>
-          <StateContext.Provider value={{
-            fullName, setName, address, setAddress, Phone, setPhone, email, setEmail,
-            LinkedIn, setLinked, Protfolio, setPortfolio, Degree, setDegree, Institution, setInit,
-            Graduation, setDate, Projects, setProjects, projectArr, setArr, proj, setipro, Hobbies,
-            setHob, HobArr, setHobArr, Hob, setiHob, Programming, setProg,
-            ProgArr, setProgArr, prog, setiprog, languages, setLang, LangArr, setLangArr, lan, setiLan,
-            Experince, setExperience, ExpArr, setExpArr, Exp, setiExp, country, setCountry, targetJobTitle, setTargetJobTitle,
-            company, setCompany, city, setCity, sendTo, setSendTo, industry, setIndustry, years, setYears, skills, setSkills,
-            qualities, setQualities
-          }}>
+          <StateContext.Provider
+            value={{
+              fullName,
+              setName,
+              address,
+              setAddress,
+              Phone,
+              setPhone,
+              email,
+              setEmail,
+              LinkedIn,
+              setLinked,
+              Protfolio,
+              setPortfolio,
+              Degree,
+              setDegree,
+              Institution,
+              setInit,
+              Graduation,
+              setDate,
+              Projects,
+              setProjects,
+              Hobbies,
+              setHob,
+              Programming,
+              setProg,
+              languages,
+              setLang,
+              Experince,
+              setExperience,
+              country,
+              setCountry,
+              targetJobTitle,
+              setTargetJobTitle,
+              company,
+              setCompany,
+              city,
+              setCity,
+              sendTo,
+              setSendTo,
+              industry,
+              setIndustry,
+              years,
+              setYears,
+              skills,
+              setSkills,
+              qualities,
+              setQualities,
+            }}
+          >
             <Routes>
               <Route path="/Contact" element={<FirstPage />} />
               <Route path="/Education" element={<SecondPage />}></Route>
               <Route path="/Skills" element={<ThirdPage />}></Route>
               <Route path="/Experience" element={<FourthPage />}></Route>
-              <Route path='/Resume' element={<ResumePage />}></Route>
+              <Route path="/Resume" element={<ResumePage />}></Route>
               <Route path="/Letter" element={<Letter />} />
               <Route path="/CoverSelect" element={<CoverSelect />} />
               <Route path="/FirstStep" element={<FirstStep />} />
@@ -108,8 +133,7 @@ function App() {
           </StateContext.Provider>
         </div>
       </div>
-    </Router >
-
+    </Router>
   );
 }
 

@@ -2,8 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import ResumeData from "./models/resume.js";
-import cors from 'cors'; 
-import authController from'./Controllers/auth.controller.js';
+import cors from 'cors';
+import authController from './Controllers/auth.controller.js';
+import authMiddleware from './middleware/auth.middleware.js';
 dotenv.config();
 
 const app = express();
@@ -19,11 +20,13 @@ mongoose.connect(process.env.URL)
     console.error(error);
   });
 
-app.post('/resume/save', (req, res) => {
+
+app.post('/resume/save', authMiddleware, (req, res) => {
 
   const data = req.body;
   console.log(data);
-  data.userID = "1";
+  delete data.token;
+  data.userID = req.user._id;
   const resumeData = new ResumeData(data);
   console.log(resumeData);
 
@@ -35,13 +38,16 @@ app.post('/resume/save', (req, res) => {
       res.status(500).send('Error saving data: ' + error);
     });
 });
-app.post('/register',authController.signup);
-app.post('/login',authController.login);
+app.post('/register', authController.signup);
+app.post('/login', authController.login);
+app.get('/check', authMiddleware, (req, res) => {
+  return res.status(200).json({ status: 'success' });
+})
 
-app.get('/resume/history', async (req, res) => {
+app.get('/resume/history', authMiddleware, async (req, res) => {
 
-  const data = await ResumeData.find({ userID: 1 }).select({ _id: 0, userID: 0, __v: 0 });
-  res.status(200).json({ data });
+  const data = await ResumeData.find({ userID: req.user._id }).select({ _id: 0, userID: 0, __v: 0 });
+  res.status(200).json({ data, user: req.user });
 
 })
 

@@ -8,8 +8,7 @@ import Footer from "../../components/PageStructure/Footer";
 import { StateContext } from "../../components/App";
 
 const FourthPage = () => {
-  const { Experince, setExperience, ExpArr, setExpArr, Exp, setiExp } =
-    useContext(StateContext);
+  const { Experince, setExperience } = useContext(StateContext);
   const navigate = useNavigate();
   const NextHandler = (e) => {
     e.preventDefault();
@@ -18,119 +17,51 @@ const FourthPage = () => {
   const BackHandler = () => navigate("/Skills");
 
   const AddExperince = () => {
-    setiExp(Exp + 1);
     setExperience((prev) => [
       ...prev,
       { JobTitle: "", JobDesc: "", From: "", To: "" },
     ]);
-    setExpArr((prevprojects, index) => {
-      return [
-        ...prevprojects,
-        <div className="Projects" id={Exp}>
-          <button type="button" onClick={del} name={Exp}>
-            X
-          </button>
-          <div className="JobTitle">
-            <p>Job Title</p>
-            <input
-              type="text"
-              name={Exp}
-              placeholder="e.g. Junior Software Eng."
-              onChange={(e) => {
-                setExperience((prev) => {
-                  const value = e.target.value;
-                  let key = parseInt(e.target.name);
-                  if (key <= prev.length) {
-                    prev[key].JobTitle = value;
-                  } else {
-                    prev = [...prev, { jobTitle: value }];
-                  }
-                  return prev;
-                });
-              }}
-            ></input>
-          </div>
-          <div className="JobDesc">
-            <p>Job Description</p>
-            <textarea
-              type="text"
-              name={Exp}
-              placeholder="e.g. I design softwares for companies"
-              onChange={(e) => {
-                setExperience((prev) => {
-                  const value = e.target.value;
-                  let key = parseInt(e.target.name);
-                  if (key <= prev.length) {
-                    prev[key].JobDesc = value;
-                  } else {
-                    prev = [...prev, { JobDesc: value }];
-                  }
-                  return prev;
-                });
-              }}
-            ></textarea>
-          </div>
-          <div className="From">
-            <p>From</p>
-            <input
-              type="text"
-              name={Exp}
-              placeholder="e.g. 2020"
-              onChange={(e) => {
-                setExperience((prev) => {
-                  const value = e.target.value;
-                  let key = parseInt(e.target.name);
-                  if (key <= prev.length) {
-                    prev[key].From = value;
-                  } else {
-                    prev = [...prev, { From: value }];
-                  }
-                  return prev;
-                });
-              }}
-            ></input>
-          </div>
-          <div className="To">
-            <p>To</p>
-            <input
-              type="text"
-              name={Exp}
-              placeholder="e.g. 2023"
-              onChange={(e) => {
-                setExperience((prev) => {
-                  const value = e.target.value;
-                  let key = parseInt(e.target.name);
-                  if (key <= prev.length) {
-                    prev[key].To = value;
-                  } else {
-                    prev = [...prev, { To: value }];
-                  }
-                  return prev;
-                });
-              }}
-            ></input>
-          </div>
-        </div>,
-      ];
-    });
   };
-  const del = (e) => {
-    console.log(e.target.name);
-    const x = document.getElementById(e.target.name);
-    x.classList.add("hidden");
-    const index = e.target.name;
-    setExperience((prev) => {
-      prev[index].To = "";
-      prev[index].From = "";
-      prev[index].JobTitle = "";
-      prev[index].JobDesc = "";
-      return prev;
-    });
-    setExpArr((prev) => {
-      prev[index] = "";
-      return prev;
-    });
+  const handleDeleteExp = (expIndex) => {
+    const newExperinces = [...Experince];
+    newExperinces.splice(expIndex, 1);
+
+    setExperience(newExperinces);
   };
+  const handleFromChange = (newFrom, expIndex) => {
+    if (expIndex >= Experince?.length) return;
+
+    const newExperinces = [...Experince];
+    newExperinces[expIndex].From =newFrom ;
+    
+    setExperience(newExperinces);
+  };
+  const handleToChange = (newTo, expIndex) => {
+    if (expIndex >= Experince?.length) return;
+
+    const newExperinces = [...Experince];
+    newExperinces[expIndex].To =newTo ;
+    
+    setExperience(newExperinces);
+  };
+  const handleTitleChange = (newTitle, expIndex) => {
+    if (expIndex >= Experince?.length) return;
+
+    const newExperinces = [...Experince];
+    newExperinces[expIndex].JobTitle =newTitle ;
+    
+    setExperience(newExperinces);
+  };
+  const handleDescChange = (newDesc, expIndex) => {
+    if (expIndex >= Experince?.length) return;
+
+    const newExperinces = [...Experince];
+    newExperinces[expIndex].JobDesc =newDesc ;
+    
+    setExperience(newExperinces);
+  };
+
+
   function debug() {
     console.log(Experince);
   }
@@ -153,9 +84,57 @@ const FourthPage = () => {
                     Add Job Experience
                   </button>
                   <div className="projectWrapper">
-                    {ExpArr.map((project) => {
-                      return <div>{project}</div>;
-                    })}
+                    {Experince.map((exp,index) => (
+                      <div className="Projects">
+                        <button type="button" onClick={()=>handleDeleteExp(index)}>
+                          X
+                        </button>
+                        <div className="JobTitle">
+                          <p>Job Title</p>
+                          <input
+                            type="text"
+                            placeholder="e.g. Junior Software Eng."
+                            value={exp.JobTitle}
+                            onChange={(e) => {
+                             handleTitleChange(e?.target?.value,index)
+                            }}
+                          ></input>
+                        </div>
+                        <div className="JobDesc">
+                          <p>Job Description</p>
+                          <textarea
+                            type="text"
+                            placeholder="e.g. I design softwares for companies"
+                            value={exp.JobDesc}
+                            onChange={(e) => {
+                              handleDescChange(e?.target?.value,index)
+                            }}
+                          ></textarea>
+                        </div>
+                        <div className="From">
+                          <p>From</p>
+                          <input
+                            type="text"
+                            placeholder="e.g. 2020"
+                            value={exp.From}
+                            onChange={(e) => {
+                              handleFromChange(e?.target?.value,index)
+                            }}
+                          ></input>
+                        </div>
+                        <div className="To">
+                          <p>To</p>
+                          <input
+                            type="text"
+                            placeholder="e.g. 2023"
+                            value={exp.To}
+                            onChange={(e) => {
+                              handleToChange(e?.target?.value,index)
+                            }}
+                          ></input>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -166,11 +145,6 @@ const FourthPage = () => {
                 <button className="Next" type="submit" onClick={NextHandler}>
                   Next
                 </button>
-
-             
-                  
-              
-
               </div>
             </div>
             <div className="BackgroundImg"></div>

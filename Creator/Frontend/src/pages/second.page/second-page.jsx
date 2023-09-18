@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
 import { StateContext } from "../../components/App";
+import Project from "../../componets/project";
 
 const SecondPage = () => {
   const {
@@ -17,10 +18,6 @@ const SecondPage = () => {
     setDate,
     Projects,
     setProjects,
-    projectArr,
-    setArr,
-    proj,
-    setipro,
   } = useContext(StateContext);
 
   const navigate = useNavigate();
@@ -31,56 +28,26 @@ const SecondPage = () => {
   const BackHandler = () => {
     navigate("/Contact");
   };
-  const AddProject = () => {
-    setipro(proj + 1);
-    setProjects((prev) => [...prev, ""]);
-    setArr((prevprojects, index) => {
-      return [
-        ...prevprojects,
 
-        <div className="Projects" id={proj}>
-          <button type="button" onClick={del} name={proj}>
-            X
-          </button>
-          <input
-            type="text"
-            id={proj}
-            placeholder="e.g. Ecommerce website"
-            //value={Projects[0]}
-            onChange={(e) => {
-              setProjects((prev) => {
-                const value = e.target.value;
-                let key = parseInt(e.target.id);
-                if (key <= prev.length) {
-                  prev[key] = value;
-                } else {
-                  prev = [...prev, value];
-                }
-                return prev;
-              });
-            }}
-          ></input>
-        </div>,
-      ];
-    });
+  const AddProject = () => {
+    setProjects((prev) => [...prev, ""]);
   };
-  const del = (e) => {
-    console.log(e.target.name);
-    const x = document.getElementById(e.target.name);
-    x.classList.add("hidden");
-    const index = e.target.name;
-    setProjects((prev) => {
-      prev[index] = "";
-      return prev;
-    });
-    setArr((prev) => {
-      prev[index] = "";
-      return prev;
-    });
+
+  const handleDeleteProject = (projectIndex) => {
+    const newProjects = [...Projects];
+    newProjects.splice(projectIndex, 1);
+
+    setProjects(newProjects);
   };
-  function debug() {
-    console.log(Projects);
-  }
+
+  const handleProjectChange = (newProject, projectIndex) => {
+    if (projectIndex >= Projects?.length) return;
+
+    const newProjects = [...Projects];
+    newProjects[projectIndex] = newProject;
+
+    setProjects(newProjects);
+  };
 
   return (
     <>
@@ -88,8 +55,7 @@ const SecondPage = () => {
       <div id="secondPage">
         <Navbar props={1} />
         <form onSubmit={NextHandler}>
-        <div className="Background">
-         
+          <div className="Background">
             <div className="mainWrapper">
               <p>Education</p>
               <div className="inputWrapper ">
@@ -132,13 +98,32 @@ const SecondPage = () => {
               </div>
 
               <div className="inputWrapper">
-                <button type="button" onClick={AddProject} className="Probutton">
+                <button
+                  type="button"
+                  onClick={AddProject}
+                  className="Probutton"
+                >
                   Add project
                 </button>
                 <div className="projectWrapper">
-                  {projectArr.map((project) => {
-                    return <div>{project}</div>;
-                  })}
+                  {Projects?.map((project, index) => (
+                    <div className="Projects">
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteProject(index)}
+                      >
+                        X
+                      </button>
+                      <input
+                        type="text"
+                        value={project}
+                        placeholder="e.g. Ecommerce website"
+                        onChange={(e) => {
+                          handleProjectChange(e?.target?.value, index);
+                        }}
+                      ></input>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -146,15 +131,13 @@ const SecondPage = () => {
                 <button type="button" className="Back" onClick={BackHandler}>
                   Back
                 </button>
-                <button  className="Next" type="submit">
+                <button className="Next" type="submit">
                   Next
                 </button>
-              
               </div>
             </div>
             <div className="BackgroundImg"></div>
-          
-        </div>
+          </div>
         </form>
       </div>
 

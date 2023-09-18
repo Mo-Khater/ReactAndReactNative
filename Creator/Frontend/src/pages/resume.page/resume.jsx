@@ -13,6 +13,7 @@ import axios from 'axios';
 
 
 export default function ResumePage() {
+    const token = localStorage.getItem('token');
     const navigate = useNavigate();
     const back = () => {
         navigate('/Experience');
@@ -28,7 +29,11 @@ export default function ResumePage() {
             Programming, languages, Experince
         };
         console.log("save");
-        await axios.post('http://localhost:3001/resume/save', dataToSave)
+        await axios.post('http://localhost:3002/resume/save', dataToSave, {
+            headers: {
+                "authorization": "Bearer " + token, // Set the content type to JSON
+            }
+        },)
             .then(response => {
                 console.log('Data saved successfully!');
             })

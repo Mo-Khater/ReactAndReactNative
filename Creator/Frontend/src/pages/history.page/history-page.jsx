@@ -7,19 +7,23 @@ import { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 
 function useFetch() {
+    const token = localStorage.getItem('token');
     const [arr, setArr] = useState([]);
     const allRef = useRef([]);
     console.log(allRef);
     useEffect(() => {
+
         async function getData() {
             try {
-                const res = await axios.get('http://localhost:3001/resume/history', {
-                    responseType: 'json',
+                const res = await axios.get('http://localhost:3002/resume/history', {
+                    headers: {
+                        "authorization": "Bearer " + token, // Set the content type to JSON
+                    },
                 });
                 setArr(await res.data.data);
                 allRef.current = Array(await res.data.data.length).fill().map(
                     (ref, index) => allRef.current[index] = React.createRef()
-                )
+                );
 
             } catch (error) {
                 console.log(error);
@@ -33,7 +37,7 @@ function useFetch() {
 
 function History() {
     const { arr, allRef } = useFetch();
-    
+
     return (
         <>
             <Header />
@@ -50,7 +54,7 @@ function History() {
                         />
                     );
                 })}
-                
+
             </div>
             <Footer />
         </>

@@ -5,8 +5,13 @@
 #firstPage .Background .BackgroundImg {
   height: 89.2vh;
   width: 40vw;
-  background: url("../../../../assets/information-3.jpg");
+  background: url("../../../../assets/information-1.jpg");
   background-size: 40vw;
+}
+@media (max-width: 1200px) {
+  #firstPage .Background .BackgroundImg {
+    display: none;
+  }
 }
 #firstPage .mainWrapper {
   margin-left: 50px;
@@ -52,19 +57,6 @@
   border-bottom: 1px solid #ccc;
   width: 95%;
 }
-#firstPage .mainWrapper .linksWrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  height: 20vh;
-  width: 100%;
-}
-#firstPage .mainWrapper .linksWrapper .inputWrapper {
-  min-width: 20px;
-}
-#firstPage .mainWrapper .linksWrapper input {
-  width: 85%;
-}
 #firstPage .mainWrapper .buttonsWrapper {
   display: flex;
   width: 94%;
@@ -74,12 +66,12 @@
   width: 100px;
   height: 40px;
   border: none;
-  font-size: 25px;
+  font-size: 20px;
   border-radius: 2px;
   border-width: 2px;
 }
 #firstPage .mainWrapper .buttonsWrapper .Next {
-  background-color: rgb(0, 0, 135);
+  background-color: #102c57;
   color: white;
 }
 #firstPage .mainWrapper .buttonsWrapper .Back {

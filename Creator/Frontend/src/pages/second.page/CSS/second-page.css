@@ -5,8 +5,13 @@
 #secondPage .Background .BackgroundImg {
   height: 89.2vh;
   width: 40vw;
-  background: url("../../../assets/information-3.jpg");
+  background: url("../../../assets/information-2.jpg");
   background-size: 40vw;
+}
+@media (max-width: 1200px) {
+  #secondPage .Background .BackgroundImg {
+    display: none;
+  }
 }
 #secondPage .mainWrapper {
   margin-left: 50px;
@@ -31,6 +36,7 @@
   min-width: 30vw;
   min-height: 10vh;
   font-size: 20px;
+  width: 95%;
 }
 #secondPage .mainWrapper .inputWrapper label {
   display: block;
@@ -50,12 +56,11 @@
 }
 #secondPage .mainWrapper .borderbottom {
   border-bottom: 1px solid #ccc;
-  width: 95%;
 }
 #secondPage .mainWrapper .linksWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   height: 20vh;
   width: 100%;
 }
@@ -69,8 +74,9 @@
   display: flex;
   width: 94%;
   justify-content: space-between;
+  margin-bottom: 3.5px;
 }
-#secondPage .mainWrapper .buttonsWrapper button {
+#secondPage .mainWrapper button {
   width: 100px;
   height: 40px;
   border: none;
@@ -78,13 +84,38 @@
   border-radius: 2px;
   border-width: 2px;
 }
-#secondPage .mainWrapper .buttonsWrapper .Next {
+#secondPage .mainWrapper .Projects {
+  display: flex;
+}
+#secondPage .mainWrapper .Projects button {
+  background-color: #102c57;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  margin: 14px 10px 10px 30px;
+  font-size: 15px;
+}
+#secondPage .mainWrapper .Next {
   background-color: #102c57;
   color: white;
 }
-#secondPage .mainWrapper .buttonsWrapper .Back {
+#secondPage .mainWrapper .Back {
   background-color: white;
   color: black;
   border-style: solid;
   border-color: #8f8e8e;
+}
+#secondPage .mainWrapper .projectWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 50vw;
+}
+#secondPage .mainWrapper .Probutton {
+  color: white;
+  width: 150px;
+  background-color: #102c57;
+}
+#secondPage .mainWrapper .hidden {
+  display: none;
 }/*# sourceMappingURL=second-page.css.map */

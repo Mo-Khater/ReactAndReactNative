@@ -42,7 +42,7 @@ function Education({ educationInfo }) {
                     <h4>Institution</h4><span>{educationInfo.Institution}</span>
                 </li>
                 <li>
-                    <h4>Graduate</h4><span>{educationInfo.Graduation}</span>
+                    <h4>Graduated</h4><span>{educationInfo.Graduation}</span>
                 </li>
 
             </ul>

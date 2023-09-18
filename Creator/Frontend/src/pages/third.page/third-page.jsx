@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/PageStructure/Header";
 import Footer from "../../components/PageStructure/Footer";
 import { StateContext } from "../../components/App";
+import { Language } from "../resume.page/sub/summary";
 
 const ThirdPage = () => {
   const {
@@ -13,22 +14,9 @@ const ThirdPage = () => {
     Hobbies,
     languages,
     setHob,
-    HobArr,
-    setHobArr,
-    Hob,
-    setiHob,
     setProg,
-    ProgArr,
-    setProgArr,
-    prog,
-    setiprog,
     setLang,
-    LangArr,
-    setLangArr,
-    lan,
-    setiLan,
   } = useContext(StateContext);
-  const index = 0;
 
   const navigate = useNavigate();
   const NextHandler = (e) => {
@@ -38,145 +26,65 @@ const ThirdPage = () => {
   const BackHandler = () => navigate("/Education");
 
   const AddLang = () => {
-    setiLan(lan + 1);
     setLang((prev) => [...prev, ""]);
-    setLangArr((prevprojects, index) => {
-      return [
-        ...prevprojects,
-        <div className="Projects" id={lan + " lan"}>
-          <button type="button"  onClick={delLang} name={lan + " lan"}>
-            X
-          </button>
-          <input
-            type="text"
-            id={lan}
-            // value={lan[index++]}
-            placeholder="e.g. Arabic"
-            onChange={(e) => {
-              setLang((prev) => {
-                const value = e.target.value;
-                let key = parseInt(e.target.id);
-                if (key <= prev.length) {
-                  prev[key] = value;
-                } else {
-                  prev = [...prev, value];
-                }
-                return prev;
-              });
-            }}
-          ></input>
-        </div>,
-      ];
-    });
+  };
+  const handleDeleteLang = (languageIndex) => {
+    const newLanguages = [...languages];
+    newLanguages.splice(languageIndex, 1);
+
+    setLang(newLanguages);
+  };
+  const handleLangChange = (language, languageIndex) => {
+    if (languageIndex >= languages?.length) return;
+
+    const newLanguages = [...languages];
+    newLanguages[languageIndex] = language;
+    
+    setLang(newLanguages);
   };
 
-  const AddProg = () => {
-    setiprog(prog + 1);
+
+
+  const AddSkill = () => {
     setProg((prev) => [...prev, ""]);
-    setProgArr((prevprojects, index) => {
-      return [
-        ...prevprojects,
-
-        <div className="Projects" id={prog + " prog"}>
-          <button type="button" onClick={delProg} name={prog + " prog"}>
-            X
-          </button>
-          <input
-            type="text"
-            id={prog}
-            placeholder="e.g. Web development"
-            onChange={(e) => {
-              setProg((prev) => {
-                const value = e.target.value;
-                let key = parseInt(e.target.id);
-                if (key <= prev.length) {
-                  prev[key] = value;
-                } else {
-                  prev = [...prev, value];
-                }
-                return prev;
-              });
-            }}
-          ></input>
-        </div>,
-      ];
-    });
   };
+  const handleDeleteSkill = (skillIndex) => {
+    const newProgramming = [...Programming];
+    newProgramming.splice(skillIndex, 1);
+
+    setProg(newProgramming);
+  };
+  const handleSkillChange = (Skill, SkillIndex) => {
+    if (SkillIndex >= Programming?.length) return;
+
+    const newProgramming = [...Programming];
+    newProgramming[SkillIndex] = Skill;
+    
+    setProg(newProgramming);
+  };
+
+
 
   const AddHobbie = () => {
-    setiHob(Hob + 1);
     setHob((prev) => [...prev, ""]);
-    setHobArr((prevprojects, index) => {
-      return [
-        ...prevprojects,
+  };
+  const handleDeleteHobbie = (HobbieIndex) => {
+    const newHobbies= [...Hobbies];
+    newHobbies.splice(HobbieIndex, 1);
 
-        <div className="Projects" id={Hob + " HOB"}>
-          <button type="button" onClick={delHob} name={Hob + " HOB"}>
-            X
-          </button>
-          <input
-            type="text"
-            id={Hob}
-            placeholder="e.g. Fishing"
-            onChange={(e) => {
-              setHob((prev) => {
-                const value = e.target.value;
-                let key = parseInt(e.target.id);
-                if (key <= prev.length) {
-                  prev[key] = value;
-                } else {
-                  prev = [...prev, value];
-                }
-                return prev;
-              });
-            }}
-          ></input>
-        </div>,
-      ];
-    });
+    setHob(newHobbies);
   };
-  const delHob = (e) => {
-    console.log(e.target.name);
-    const x = document.getElementById(e.target.name);
-    x.classList.add("hidden");
-    const index = e.target.name.split(" ");
-    setHob((prev) => {
-      prev[index[0]] = "";
-      return prev;
-    });
-    setHobArr((prev) => {
-      prev[index[0]] = "";
-      return prev;
-    });
+  const handleHobbieChange = (Hobbie, HobbieIndex) => {
+    if (HobbieIndex >= Hobbies?.length) return;
+
+    const newHobbies = [...Hobbies];
+    newHobbies[HobbieIndex] = Hobbie;
+    
+    setHob(newHobbies);
   };
-  const delProg = (e) => {
-    console.log(e.target.name);
-    const x = document.getElementById(e.target.name);
-    x.classList.add("hidden");
-    const index = e.target.name.split(" ");
-    setProg((prev) => {
-      prev[index[0]] = "";
-      return prev;
-    });
-    setProgArr((prev) => {
-      prev[index[0]] = "";
-      return prev;
-    });
-  };
-  const delLang = (e) => {
-    console.log(e.target.name);
-    const x = document.getElementById(e.target.name);
-    x.classList.add("hidden");
-    const index = e.target.name.split(" ");
-    setLang((prev) => {
-      prev[index[0]] = "";
-      return prev;
-    });
-    setLangArr((prev) => {
-      prev[index[0]] = "";
-      return prev;
-    });
-  };
+
+  
+
   function debug() {
     console.log(Programming);
     console.log(Hobbies);
@@ -192,13 +100,28 @@ const ThirdPage = () => {
             <div className="mainWrapper">
               <p>Skills</p>
               <div className="inputWrapper">
-                <button type="button" onClick={AddProg} className="Probutton">
+                <button type="button" onClick={AddSkill} className="Probutton">
                   Add Programming Skill
                 </button>
                 <div className="projectWrapper">
-                  {ProgArr.map((project) => {
-                    return <div>{project}</div>;
-                  })}
+                {Programming?.map((Skill, index) => (
+                    <div className="Projects">
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteSkill(index)}
+                      >
+                        X
+                      </button>
+                      <input
+                        type="text"
+                        value={Skill}
+                        placeholder="e.g. Arabic"
+                        onChange={(e) => {
+                          handleSkillChange(e?.target?.value, index);
+                        }}
+                      ></input>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -207,9 +130,24 @@ const ThirdPage = () => {
                   Add Langauge
                 </button>
                 <div className="projectWrapper">
-                  {LangArr.map((project) => {
-                    return <div>{project}</div>;
-                  })}
+                  {languages?.map((language, index) => (
+                    <div className="Projects">
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteLang(index)}
+                      >
+                        X
+                      </button>
+                      <input
+                        type="text"
+                        value={language}
+                        placeholder="e.g. Arabic"
+                        onChange={(e) => {
+                          handleLangChange(e?.target?.value, index);
+                        }}
+                      ></input>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -218,9 +156,24 @@ const ThirdPage = () => {
                   Add Hobbie
                 </button>
                 <div className="projectWrapper">
-                  {HobArr.map((project) => {
-                    return <div>{project}</div>;
-                  })}
+                {Hobbies?.map((hobbie, index) => (
+                    <div className="Projects">
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteHobbie(index)}
+                      >
+                        X
+                      </button>
+                      <input
+                        type="text"
+                        value={hobbie}
+                        placeholder="e.g. Arabic"
+                        onChange={(e) => {
+                          handleHobbieChange(e?.target?.value, index);
+                        }}
+                      ></input>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -228,10 +181,9 @@ const ThirdPage = () => {
                 <button type="button" className="Back" onClick={BackHandler}>
                   Back
                 </button>
-                <button  className="Next" type="submit" >
+                <button className="Next" type="submit">
                   Next
                 </button>
-              
               </div>
             </div>
             <div className="BackgroundImg"></div>
